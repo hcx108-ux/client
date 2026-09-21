@@ -1,11 +1,11 @@
-import personal_journey_beginning_bg_pngImg from '../../assets/personal_journey_beginning_bg.png';
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
+import personalJourneyImg from '../../assets/personal_journey_beginning_img_0.png';
 import './PersonalJourneyBeginning.css';
 
 export default function PersonalJourneyBeginning() {
   const [showJourneyModal, setShowJourneyModal] = useState(false);
   const [selectedFocus, setSelectedFocus] = useState('life-patterns');
-  const [journeyStep, setJourneyStep] = useState(1); // 1: question selection, 2: path recommendation
+  const [journeyStep, setJourneyStep] = useState(1);
 
   const focusOptions = [
     { id: 'life-patterns', title: 'Understanding Life Patterns & Cycles', desc: 'Explore astrological periods, tendencies, and timing for key decisions.' },
@@ -42,27 +42,14 @@ export default function PersonalJourneyBeginning() {
           </div>
         </div>
 
-        {/* Right Column: Original Figma Balcony / Ocean Photo */}
+        {/* Right Column: Original Balcony / Ocean Photo */}
         <div className="personal-journey-photo-col">
-          <svg width="100%" height="100%" viewBox="0 0 713 450" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" className="personal-journey-photo-svg">
-  <rect width="713" height="450" fill="url(#pattern0_134_4308)"/>
-  <defs>
-<filter id="filter0_d_134_4308" x="106" y="246" width="298" height="130" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-<feFlood floodOpacity="0" result="BackgroundImageFix"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feOffset dy="14"/>
-<feGaussianBlur stdDeviation="19"/>
-<feComposite in2="hardAlpha" operator="out"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0.878431 0 0 0 0 0.772549 0 0 0 0 0.556863 0 0 0 0.2 0"/>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_134_4308"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_134_4308" result="shape"/>
-</filter>
-<pattern id="pattern0_134_4308" patternContentUnits="objectBoundingBox" width="1" height="1">
-<use xlinkHref="#image0_134_4308" transform="matrix(0.000667557 0 0 0.00105771 0 -0.055296)"/>
-</pattern>
-<image id="image0_134_4308" width="1498" height="1050" preserveAspectRatio="none" xlinkHref="${personal_journey_beginning_bg_pngImg}"/>
-</defs>
-</svg>
+          <img 
+            src={personalJourneyImg} 
+            alt="A personal journey beginning with a simple question" 
+            className="personal-journey-photo-svg" 
+            loading="lazy" 
+          />
         </div>
 
       </div>
@@ -77,7 +64,7 @@ export default function PersonalJourneyBeginning() {
               onClick={handleClose}
               aria-label="Close modal"
             >
-              âœ•
+              ✕
             </button>
 
             {journeyStep === 1 && (
@@ -112,7 +99,7 @@ export default function PersonalJourneyBeginning() {
                     className="journey-modal-next-btn"
                     onClick={() => setJourneyStep(2)}
                   >
-                    Continue to Recommendations âž”
+                    Continue to Recommendations ➔
                   </button>
                 </div>
               </div>
@@ -151,7 +138,7 @@ export default function PersonalJourneyBeginning() {
                       }
                     }}
                   >
-                    Meet Matched Practitioners âž”
+                    Meet Matched Practitioners ➔
                   </button>
                   <button 
                     type="button" 

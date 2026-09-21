@@ -1,6 +1,5 @@
-import birth_chart_mockup_svgAsset from '../../assets/birth_chart_mockup.svg';
-import your_birth_chart_bg_pngImg from '../../assets/your_birth_chart_bg.png';
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
+import birthChartPhoneImg from '../../assets/your_birth_chart_img_0.png';
 import './YourBirthChart.css';
 
 export default function YourBirthChart() {
@@ -49,7 +48,12 @@ export default function YourBirthChart() {
         
         {/* Left Column: Phone Mockup & Cosmos Visual */}
         <div className="birth-chart-visual-col">
-          <img src={birth_chart_mockup_svgAsset} alt="Visual Graphic" className="birth-chart-phone-svg" loading="lazy" />
+          <img 
+            src={birthChartPhoneImg} 
+            alt="Your Birth Chart Map" 
+            className="birth-chart-phone-svg" 
+            loading="lazy" 
+          />
         </div>
 
         {/* Right Column: Real Selectable Text & Clickable Button */}
@@ -89,7 +93,7 @@ export default function YourBirthChart() {
               onClick={handleClose}
               aria-label="Close modal"
             >
-              âœ•
+              ✕
             </button>
 
             {chartState === 'form' && (
@@ -170,7 +174,7 @@ export default function YourBirthChart() {
 
                   <div className="birth-chart-actions">
                     <button type="submit" className="birth-chart-submit-cta">
-                      Calculate My Planetary Map âž”
+                      Calculate My Planetary Map ➔
                     </button>
                   </div>
                 </form>
@@ -229,7 +233,7 @@ export default function YourBirthChart() {
                       if (meetSec) meetSec.scrollIntoView({ behavior: 'smooth' });
                     }}
                   >
-                    Consult With a Vedic Practitioner âž”
+                    Consult With a Vedic Practitioner ➔
                   </button>
                   <button 
                     type="button" 
