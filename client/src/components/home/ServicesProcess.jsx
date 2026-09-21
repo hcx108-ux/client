@@ -33,7 +33,12 @@ const ServicesProcess = () => {
   return (
     <section className={`services-process-section ${isVisible ? 'is-visible' : ''}`} ref={sectionRef}>
       <div className="services-process-container">
-        <img src={services_process_visual_svgAsset} alt="Visual Graphic" className="services-process-svg" loading="lazy" />
+        <img
+          src={services_process_visual_svgAsset}
+          alt="What Akashvani Offers"
+          className="services-process-svg process-svg"
+          loading="lazy"
+        />
       </div>
     </section>
   );
