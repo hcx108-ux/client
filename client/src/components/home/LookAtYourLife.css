@@ -1,44 +1,421 @@
 .look-at-life-section {
   width: 100%;
   margin: 0;
-  margin-top: -2px;
-  margin-bottom: -2px;
-  padding: 0;
+  padding: 60px 24px;
   background-color: #02132E;
   display: flex;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
   position: relative;
-  font-family: var(--font-sans);
+  font-family: var(--font-sans, 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif);
   overflow: hidden;
-  line-height: 0;
 }
 
-.look-at-life-container {
+.look-at-life-outer {
   width: 100%;
-  max-width: 1440px;
+  max-width: 1280px;
   margin: 0 auto;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-/* Master Graphic */
-.look-at-life-svg,
-.look-at-life-master-svg {
+/* Main Rounded Frame with Photo Background */
+.look-at-life-card-main {
   width: 100%;
-  height: auto;
-  display: block;
-  max-width: 1440px;
-  max-height: 580px;
+  border-radius: 28px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Background Overlay Tint */
+.look-at-life-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(2, 19, 46, 0.58) 0%,
+    rgba(2, 19, 46, 0.42) 45%,
+    rgba(2, 19, 46, 0.75) 100%
+  );
+  pointer-events: none;
+}
+
+/* Inner Layout */
+.look-at-life-inner-content {
+  position: relative;
+  z-index: 2;
+  padding: 64px 64px 56px 64px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Area */
+.look-at-life-header {
+  max-width: 720px;
+  margin-bottom: 48px;
+}
+
+.look-at-life-main-title {
+  font-family: var(--font-sans, 'Outfit', sans-serif);
+  font-size: 42px;
+  font-weight: 300;
+  line-height: 1.2;
+  color: #F5F0EA;
+  margin: 0 0 14px 0;
+  letter-spacing: -0.02em;
+}
+
+.look-at-life-subtitle {
+  font-family: var(--font-sans, 'Outfit', sans-serif);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(245, 240, 234, 0.85);
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+/* 2x2 Glassmorphic Cards Grid */
+.look-at-life-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 56px;
+}
+
+/* Individual Perspective Card */
+.perspective-card {
+  background: rgba(12, 24, 46, 0.48);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(245, 240, 234, 0.22);
+  border-radius: 24px;
+  padding: 38px 36px 34px 36px;
+  min-height: 250px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.3s ease,
+              border-color 0.3s ease,
+              box-shadow 0.3s ease;
+  user-select: none;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+}
+
+.perspective-card:hover {
+  transform: translateY(-4px);
+  background: rgba(18, 34, 62, 0.62);
+  border-color: rgba(245, 240, 234, 0.45);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.38), 0 0 24px rgba(224, 197, 142, 0.15);
+}
+
+.perspective-card:focus-visible {
+  outline: 2px solid #E0C58E;
+  outline-offset: 3px;
+}
+
+/* Icon Section */
+.perspective-icon-wrapper {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 32px;
+}
+
+.perspective-vector-icon {
+  width: 100%;
+  height: 100%;
+  max-width: 58px;
+  max-height: 58px;
   object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.perspective-card:hover .perspective-vector-icon {
+  transform: scale(1.06);
+}
+
+/* Bottom Text in Card */
+.perspective-card-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.perspective-card-title {
+  font-family: var(--font-sans, 'Outfit', sans-serif);
+  font-size: 26px;
+  font-weight: 300;
+  line-height: 1.2;
+  color: #F5F0EA;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.perspective-card-desc {
+  font-family: var(--font-sans, 'Outfit', sans-serif);
+  font-size: 13.5px;
+  font-weight: 300;
+  line-height: 1.45;
+  color: rgba(245, 240, 234, 0.82);
+  margin: 0;
+  max-width: 440px;
+}
+
+/* Footer Headline */
+.look-at-life-footer {
+  width: 100%;
+  text-align: center;
+  padding: 10px 0 0 0;
+}
+
+.look-at-life-footer-text {
+  font-family: var(--font-sans, 'Outfit', sans-serif);
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 1.25;
+  color: #F5F0EA;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+/* Perspective Detail Modal */
+.perspective-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 19, 46, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: modalFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(12px);
+  }
+}
+
+.perspective-modal-content {
+  background: #031633;
+  border: 1px solid rgba(224, 197, 142, 0.3);
+  border-radius: 24px;
+  max-width: 560px;
+  width: 100%;
+  padding: 40px 36px 36px 36px;
+  box-sizing: border-box;
+  position: relative;
+  color: #F5F0EA;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 40px rgba(224, 197, 142, 0.12);
+  animation: modalScaleUp 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalScaleUp {
+  from {
+    transform: scale(0.92) translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+.perspective-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  color: #F5F0EA;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.perspective-modal-close:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: rotate(90deg);
+}
+
+.perspective-modal-badge {
+  display: inline-block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #E0C58E;
+  background: rgba(224, 197, 142, 0.12);
+  padding: 4px 12px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.perspective-modal-title {
+  font-size: 32px;
+  font-weight: 300;
+  margin: 0 0 8px 0;
+  color: #F5F0EA;
+  letter-spacing: -0.01em;
+}
+
+.perspective-modal-tagline {
+  font-size: 15px;
+  color: rgba(245, 240, 234, 0.8);
+  margin: 0 0 24px 0;
+  line-height: 1.45;
+}
+
+.perspective-modal-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(245, 240, 234, 0.9);
+  margin: 0 0 24px 0;
+}
+
+.perspective-modal-focus h4 {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #E0C58E;
+  margin: 0 0 12px 0;
+}
+
+.perspective-modal-focus ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.perspective-modal-focus li {
+  font-size: 14px;
+  color: rgba(245, 240, 234, 0.85);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.45;
+}
+
+.point-bullet {
+  color: #BD5B3B;
+  font-size: 18px;
+  line-height: 14px;
+}
+
+.perspective-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.perspective-modal-cta {
+  background: #BD5B3B;
+  color: #F5F0EA;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.perspective-modal-cta:hover {
+  background: #a3482a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(189, 91, 59, 0.35);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .look-at-life-inner-content {
+    padding: 48px 36px 40px 36px;
+  }
+  .look-at-life-main-title {
+    font-size: 34px;
+  }
+  .look-at-life-footer-text {
+    font-size: 32px;
+  }
+  .perspective-card {
+    padding: 30px 26px 28px 26px;
+    min-height: 220px;
+  }
+  .perspective-card-title {
+    font-size: 24px;
+  }
 }
 
 @media (max-width: 768px) {
-  .look-at-life-svg,
-  .look-at-life-master-svg {
-    max-height: none;
+  .look-at-life-section {
+    padding: 40px 16px;
+  }
+  .look-at-life-card-main {
+    border-radius: 20px;
+  }
+  .look-at-life-inner-content {
+    padding: 36px 20px 32px 20px;
+  }
+  .look-at-life-header {
+    margin-bottom: 32px;
+  }
+  .look-at-life-main-title {
+    font-size: 28px;
+  }
+  .look-at-life-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+  .perspective-card {
+    padding: 24px 22px;
+    min-height: auto;
+    border-radius: 18px;
+  }
+  .perspective-icon-wrapper {
+    margin-bottom: 20px;
+    width: 48px;
+    height: 48px;
+  }
+  .perspective-vector-icon {
+    max-width: 48px;
+    max-height: 48px;
+  }
+  .perspective-card-title {
+    font-size: 22px;
+  }
+  .perspective-card-desc {
+    font-size: 13px;
+  }
+  .look-at-life-footer-text {
+    font-size: 26px;
   }
 }

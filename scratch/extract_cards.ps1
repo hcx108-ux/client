@@ -1,19 +1,8 @@
-$lines = Get-Content client/src/assets/mind_body_soul.svg
-Write-Host "Card 1 (Mind) text/elements:"
-for ($i = 8; $i -le 35; $i++) {
-    Write-Host "Line $($i+1): $($lines[$i].Substring(0, [Math]::Min(100, $lines[$i].Length)))"
-}
-
-Write-Host "`nCard 3 (Soul) text/elements:"
-for ($i = 36; $i -le 71; $i++) {
-    if ($lines[$i] -match 'path|text|foreignObject|rect') {
-        Write-Host "Line $($i+1): $($lines[$i].Substring(0, [Math]::Min(100, $lines[$i].Length)))"
-    }
-}
-
-Write-Host "`nCard 2 (Body) text/elements:"
-for ($i = 72; $i -le 100; $i++) {
-    if ($lines[$i] -match 'path|text|foreignObject|rect') {
-        Write-Host "Line $($i+1): $($lines[$i].Substring(0, [Math]::Min(100, $lines[$i].Length)))"
-    }
+$content = [System.IO.File]::ReadAllText('scratch/beb_life.jsx')
+$idx = $content.IndexOf('CARD 1: HUMAN')
+if ($idx -gt 0) {
+    # Extract from $idx - 500 to $idx + 10000
+    $sub = $content.Substring($idx - 200, [Math]::Min(30000, $content.Length - ($idx - 200)))
+    [System.IO.File]::WriteAllText('scratch/extracted_cards.jsx', $sub)
+    Write-Host "Extracted $(($sub.Length)) chars to scratch/extracted_cards.jsx"
 }
