@@ -7,10 +7,11 @@
   align-items: center;
   background-color: transparent;
   line-height: 0;
-  margin-top: -2px; /* Fix any small rendering gaps between SVGs */
+  margin-top: -2px;
 }
 
-.distinct-guidance-section > svg {
+.distinct-guidance-section > svg,
+.distinct-guidance-svg {
   width: 100%;
   height: auto;
   display: block;

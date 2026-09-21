@@ -5,12 +5,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #031633; /* Default dark navy background */
+  background-color: #031633;
   line-height: 0;
-  margin-top: -2px; /* Fix any small rendering gaps between SVGs */
+  margin-top: -2px;
 }
 
-.there-is-always-section > svg {
+.there-is-always-section > svg,
+.there-is-always-svg {
   width: 100%;
   height: auto;
   display: block;
