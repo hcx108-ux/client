@@ -1,0 +1,584 @@
+/* ==========================================================================
+   Start Where You Are Hero Section & Interactive Journey System
+   ========================================================================== */
+
+.start-where-section {
+  position: relative;
+  width: 100%;
+  min-height: 664px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Background Image Layer */
+.start-where-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center 30%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+/* Atmospheric Dark Blue / Charcoal Overlay */
+.start-where-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg,
+      rgba(3, 22, 51, 0.44) 0%,
+      rgba(3, 22, 51, 0.52) 50%,
+      rgba(3, 22, 51, 0.58) 100%);
+  backdrop-filter: blur(0.5px);
+  z-index: 2;
+}
+
+/* Content Container */
+.start-where-container {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 100px 24px 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 664px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Header Area */
+.start-where-header {
+  max-width: 900px;
+  margin: 40px auto 0;
+}
+
+.start-where-heading {
+  font-family: 'Urbanist', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: #F5F0EA;
+  margin: 0;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
+  user-select: text;
+}
+
+.start-where-italic {
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 44px;
+  color: #E0C58E;
+  letter-spacing: 0.01em;
+  display: inline-block;
+  margin-left: 4px;
+}
+
+/* CTA Button Container */
+.start-where-cta-wrap {
+  margin: 40px 0 60px;
+  display: flex;
+  justify-content: center;
+}
+
+/* CTA Pill Button (Terracotta / Rust) */
+.start-where-cta-btn {
+  font-family: 'Urbanist', 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #F5F0EA;
+  background-color: #BD5B3B;
+  border: none;
+  border-radius: 9999px;
+  padding: 18px 42px;
+  cursor: pointer;
+  box-shadow: 0 14px 34px rgba(189, 91, 59, 0.38), 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+}
+
+.start-where-cta-btn:hover {
+  background-color: #C86444;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 18px 42px rgba(189, 91, 59, 0.5), 0 6px 16px rgba(0, 0, 0, 0.25);
+  color: #FFFFFF;
+}
+
+.start-where-cta-btn:active {
+  transform: translateY(0) scale(0.99);
+  box-shadow: 0 8px 20px rgba(189, 91, 59, 0.3);
+}
+
+/* Bottom Logo Area */
+.start-where-logo-wrapper {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.95;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.start-where-logo-wrapper:hover {
+  opacity: 1;
+  transform: scale(1.02);
+}
+
+.start-where-logo-svg {
+  width: 174px;
+  height: auto;
+  max-height: 48px;
+  display: block;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+}
+
+/* ==========================================================================
+   Interactive Journey Modal
+   ========================================================================== */
+
+.start-where-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(11, 25, 44, 0.75);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+  box-sizing: border-box;
+  animation: swFadeIn 0.25s ease-out;
+}
+
+.start-where-modal {
+  position: relative;
+  background: #FAF7F2;
+  border: 1px solid #E6DDD0;
+  border-radius: 24px;
+  width: 100%;
+  max-width: 680px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  box-sizing: border-box;
+  animation: swSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: left;
+}
+
+.start-where-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  background: transparent;
+  border: none;
+  font-size: 32px;
+  color: #7A8699;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.start-where-modal-close:hover {
+  color: #112830;
+  transform: rotate(90deg);
+}
+
+/* Modal Header */
+.start-where-modal-header {
+  margin-bottom: 28px;
+}
+
+.start-where-modal-badge {
+  display: inline-block;
+  background: rgba(189, 91, 59, 0.12);
+  color: #BD5B3B;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  margin-bottom: 12px;
+}
+
+.start-where-modal-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 26px;
+  font-weight: 600;
+  color: #112830;
+  margin: 0 0 8px 0;
+  line-height: 1.25;
+}
+
+.start-where-modal-subtitle {
+  font-size: 14px;
+  color: #637083;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Options Grid */
+.start-where-options-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.start-where-option-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px 20px;
+  background: #FFFFFF;
+  border: 1.5px solid #E6DDD0;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.start-where-option-card:hover {
+  border-color: #BD5B3B;
+  background: #FFFDFC;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(189, 91, 59, 0.08);
+}
+
+.start-where-option-card.active {
+  border-color: #BD5B3B;
+  background: #FFF8F5;
+  box-shadow: 0 6px 20px rgba(189, 91, 59, 0.12);
+}
+
+.start-where-option-radio {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #C4D0DB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.start-where-option-card.active .start-where-option-radio {
+  border-color: #BD5B3B;
+}
+
+.start-where-option-radio .radio-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: transparent;
+  transition: background-color 0.2s ease;
+}
+
+.start-where-option-card.active .start-where-option-radio .radio-dot {
+  background: #BD5B3B;
+}
+
+.start-where-option-info {
+  flex: 1;
+}
+
+.start-where-option-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.start-where-option-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #112830;
+  margin: 0 0 4px 0;
+}
+
+.start-where-format-duration {
+  font-size: 12px;
+  font-weight: 600;
+  color: #BD5B3B;
+  background: rgba(189, 91, 59, 0.08);
+  padding: 2px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.start-where-option-desc {
+  font-size: 13px;
+  color: #637083;
+  margin: 0;
+  line-height: 1.45;
+}
+
+/* Modal Form */
+.start-where-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.start-where-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.start-where-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.start-where-form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #2D3748;
+}
+
+.start-where-form-group input,
+.start-where-form-group textarea {
+  font-family: inherit;
+  font-size: 14px;
+  padding: 12px 14px;
+  border: 1px solid #D6D3CD;
+  border-radius: 10px;
+  background: #FFFFFF;
+  color: #1A202C;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.start-where-form-group input:focus,
+.start-where-form-group textarea:focus {
+  border-color: #BD5B3B;
+  box-shadow: 0 0 0 3px rgba(189, 91, 59, 0.12);
+}
+
+/* Modal Action Footer */
+.start-where-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #E6DDD0;
+}
+
+.start-where-btn-primary {
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  color: #FFFFFF;
+  background-color: #BD5B3B;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 28px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 6px 16px rgba(189, 91, 59, 0.25);
+}
+
+.start-where-btn-primary:hover {
+  background-color: #C86444;
+  box-shadow: 0 8px 20px rgba(189, 91, 59, 0.35);
+  transform: translateY(-1px);
+}
+
+.start-where-btn-secondary {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: #637083;
+  background: transparent;
+  border: 1px solid #D6D3CD;
+  border-radius: 12px;
+  padding: 13px 22px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.start-where-btn-secondary:hover {
+  background: #ECE5DC;
+  color: #112830;
+}
+
+/* Success View */
+.start-where-success {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.start-where-success-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.start-where-success-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 28px;
+  color: #112830;
+  margin: 0 0 12px 0;
+}
+
+.start-where-success-msg {
+  font-size: 15px;
+  color: #4A5568;
+  line-height: 1.6;
+  margin: 0 auto 24px auto;
+  max-width: 520px;
+}
+
+.start-where-summary-card {
+  background: #FFFFFF;
+  border: 1px solid #E6DDD0;
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin-bottom: 20px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.start-where-summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: #637083;
+}
+
+.start-where-summary-row strong {
+  color: #112830;
+  font-weight: 600;
+  text-align: right;
+  max-width: 60%;
+}
+
+.start-where-success-hint {
+  font-size: 13px;
+  color: #718096;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+/* Animations */
+@keyframes swFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes swSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ==========================================================================
+   Responsive Adaptations
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .start-where-section {
+    min-height: 560px;
+  }
+
+  .start-where-container {
+    min-height: 560px;
+    padding: 70px 20px 50px;
+  }
+
+  .start-where-heading {
+    font-size: 30px;
+  }
+
+  .start-where-italic {
+    font-size: 34px;
+  }
+
+  .start-where-cta-btn {
+    font-size: 15px;
+    padding: 16px 36px;
+  }
+}
+
+@media (max-width: 600px) {
+  .start-where-section {
+    min-height: 500px;
+  }
+
+  .start-where-container {
+    min-height: 500px;
+    padding: 60px 16px 40px;
+  }
+
+  .start-where-heading {
+    font-size: 24px;
+    line-height: 1.4;
+  }
+
+  .start-where-italic {
+    font-size: 28px;
+    display: block;
+    margin-left: 0;
+    margin-top: 4px;
+  }
+
+  .start-where-cta-btn {
+    font-size: 14px;
+    padding: 14px 28px;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .start-where-modal {
+    padding: 28px 20px;
+  }
+
+  .start-where-form-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .start-where-logo-svg {
+    width: 140px;
+  }
+}

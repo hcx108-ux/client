@@ -1,0 +1,17 @@
+.there-is-always-section {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #031633; /* Default dark navy background */
+  line-height: 0;
+  margin-top: -2px; /* Fix any small rendering gaps between SVGs */
+}
+
+.there-is-always-section > svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}

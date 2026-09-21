@@ -1,0 +1,1 @@
+abhe bhai ye nhi hai stupidd')\nif ($idx -ge 0) {\n    $sub = $fullText.Substring($idx)\n    $endIdx = $sub.IndexOf('

@@ -1,0 +1,561 @@
+/* About Akashvani (Mind · Body · Soul) Section */
+.about-akashvani-section {
+  width: 100%;
+  background-color: var(--bg-main, #F5F0EA);
+  padding: 90px 24px 100px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.about-akashvani-container {
+  max-width: 1152px;
+  margin: 0 auto;
+}
+
+/* Header Grid */
+.about-header-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 60px;
+  align-items: flex-start;
+}
+
+.about-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 480px;
+}
+
+.about-top-tag {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #031633;
+  text-transform: uppercase;
+}
+
+.about-header-desc {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 15px;
+  line-height: 1.65;
+  color: #334155;
+  margin: 0;
+}
+
+.about-header-right {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.about-sub-tag {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: #031633;
+  text-transform: uppercase;
+}
+
+.about-main-title {
+  font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: 46px;
+  line-height: 1.15;
+  color: #031633;
+  font-weight: 400;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.about-italic-terracotta {
+  color: #BD5B3B;
+  font-style: italic;
+}
+
+/* Cards Stack */
+.about-cards-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  margin-bottom: 70px;
+}
+
+/* Dimension Card */
+.dimension-card {
+  background-color: #E8DCC4;
+  border-radius: 20px;
+  padding: 24px 28px;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 40px;
+  align-items: center;
+  box-sizing: border-box;
+  box-shadow: 0 14px 32px rgba(3, 22, 51, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dimension-card-body {
+  grid-template-columns: 0.95fr 1.05fr;
+}
+
+.dimension-card:hover {
+  box-shadow: 0 20px 40px rgba(3, 22, 51, 0.09);
+}
+
+/* Image Column */
+.dimension-card-image-col {
+  width: 100%;
+  height: 360px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #D8CCA0;
+}
+
+.dimension-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.dimension-card:hover .dimension-card-img {
+  transform: scale(1.02);
+}
+
+/* Content Column */
+.dimension-card-content-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px 0 10px 10px;
+}
+
+.dimension-icon-wrapper {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.dimension-icon-wrapper svg {
+  display: block;
+}
+
+.dimension-title {
+  font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: 44px;
+  font-style: italic;
+  font-weight: 400;
+  color: #031633;
+  margin: 0 0 12px 0;
+  line-height: 1;
+}
+
+.dimension-subtitle {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: #031633;
+  margin: 0 0 24px 0;
+}
+
+/* Tags Group */
+.dimension-tags-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dimension-tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.dimension-tag-pill {
+  background: transparent;
+  border: 1px solid #031633;
+  border-radius: 19.5px;
+  padding: 7px 18px;
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #031633;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  white-space: nowrap;
+}
+
+.dimension-tag-pill:hover {
+  background-color: #031633;
+  color: #FDFAF8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(3, 22, 51, 0.15);
+}
+
+.dimension-tag-pill:active {
+  transform: translateY(0);
+}
+
+/* Bottom Banner */
+.about-bottom-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0 10px;
+  gap: 32px;
+}
+
+.bottom-banner-heading {
+  font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: 40px;
+  line-height: 1.18;
+  color: #031633;
+  font-weight: 400;
+  margin: 0;
+}
+
+.bottom-italic-terracotta {
+  color: #BD5B3B;
+  font-style: italic;
+}
+
+.about-explore-btn {
+  background-color: #031633;
+  color: #F5F0EA;
+  border: none;
+  border-radius: 9999px;
+  padding: 15px 36px;
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 14.5px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 16px rgba(3, 22, 51, 0.18);
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.about-explore-btn:hover {
+  background-color: #BD5B3B;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(189, 91, 59, 0.35);
+}
+
+.explore-arrow {
+  transition: transform 0.2s ease;
+}
+
+.about-explore-btn:hover .explore-arrow {
+  transform: translateX(4px);
+}
+
+/* ========================================================= */
+/* Modals Styling */
+/* ========================================================= */
+.about-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(3, 22, 51, 0.65);
+  backdrop-filter: blur(6px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: modalFadeIn 0.25s ease-out;
+}
+
+.about-modal-container {
+  background-color: #FDFAF8;
+  border-radius: 20px;
+  max-width: 540px;
+  width: 100%;
+  box-shadow: 0 28px 64px rgba(3, 22, 51, 0.35);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(189, 91, 59, 0.15);
+  animation: modalSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-modal-large {
+  max-width: 620px;
+}
+
+.about-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: rgba(3, 22, 51, 0.06);
+  border: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #031633;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.about-modal-close:hover {
+  background: #031633;
+  color: #FFFFFF;
+}
+
+.about-modal-body {
+  padding: 36px 36px 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-dimension-tag {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #BD5B3B;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.modal-insight-title {
+  font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: 28px;
+  color: #031633;
+  margin: 0 0 10px 0;
+  font-weight: 400;
+}
+
+.modal-insight-desc {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 14px;
+  line-height: 1.6;
+  color: #556070;
+  margin: 0 0 20px 0;
+}
+
+.modal-practices-box {
+  background: #FFFFFF;
+  border: 1px solid #E4DDD6;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+}
+
+.practices-heading {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #031633;
+  margin: 0 0 12px 0;
+  text-transform: uppercase;
+}
+
+.practices-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.practices-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 13px;
+  color: #334155;
+}
+
+.practice-check {
+  color: #BD5B3B;
+  font-size: 12px;
+}
+
+.about-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-cta-primary {
+  background-color: #BD5B3B;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 9999px;
+  padding: 12px 28px;
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(189, 91, 59, 0.25);
+  transition: all 0.2s ease;
+}
+
+.modal-cta-primary:hover {
+  background-color: #d16442;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(189, 91, 59, 0.35);
+}
+
+/* Exploration Tabs */
+.dimension-selector-tabs {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.dim-tab-btn {
+  background: #FFFFFF;
+  border: 1.5px solid #E2DCD5;
+  border-radius: 12px;
+  padding: 12px 16px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.dim-tab-btn strong {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 14px;
+  color: #031633;
+}
+
+.dim-tab-btn span {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 12px;
+  color: #70798C;
+}
+
+.dim-tab-btn.active {
+  border-color: #BD5B3B;
+  background-color: #FBF2EE;
+  box-shadow: 0 2px 8px rgba(189, 91, 59, 0.12);
+}
+
+.dim-tab-btn.active strong {
+  color: #BD5B3B;
+}
+
+.selected-dimension-preview {
+  background: #FFFFFF;
+  border: 1px solid #E5DFD8;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+}
+
+.dim-preview-card h4 {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 14px;
+  color: #031633;
+  margin: 0 0 6px 0;
+  font-weight: 600;
+}
+
+.dim-preview-card p {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 13px;
+  line-height: 1.5;
+  color: #606877;
+  margin: 0;
+}
+
+/* Animations */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ========================================================= */
+/* Responsive Media Queries */
+/* ========================================================= */
+@media (max-width: 960px) {
+  .about-header-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .dimension-card,
+  .dimension-card-body {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 24px;
+  }
+
+  /* Keep image first on mobile for consistency */
+  .dimension-card-body .dimension-card-image-col {
+    order: -1;
+  }
+
+  .dimension-card-image-col {
+    height: 280px;
+  }
+
+  .about-bottom-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .bottom-banner-heading {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-akashvani-section {
+    padding: 60px 16px 70px;
+  }
+
+  .about-main-title {
+    font-size: 32px;
+  }
+
+  .dimension-title {
+    font-size: 34px;
+  }
+
+  .dimension-tag-pill {
+    font-size: 12.5px;
+    padding: 6px 14px;
+  }
+
+  .about-modal-body {
+    padding: 28px 20px 24px;
+  }
+}

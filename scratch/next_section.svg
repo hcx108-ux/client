@@ -1,0 +1,20 @@
+<svg' or 'svg'
+$start = $content.LastIndexOf('svg', $idx)
+Write-Host "Index of svg before 1018: $start"
+
+$snippetBefore = $content.Substring([Math]::Max(0, $idx - 200), 250)
+Write-Host "Snippet around 1018: $snippetBefore"
+
+# Let's find '<svg' or 'viewBox'
+$svgStart = $content.LastIndexOf('<svg', $idx)
+if ($svgStart -eq -1) {
+    # Try finding '<svg' anywhere in the user line
+    $userLineIdx = $content.LastIndexOf('"type":"USER_INPUT"', $idx)
+    Write-Host "User input line index: $userLineIdx"
+    $svgStart = $content.IndexOf('<svg', $userLineIdx)
+}
+
+Write-Host "Final svgStart: $svgStart"
+
+if ($svgStart -ne -1) {
+    $svgEnd = $content.IndexOf('</svg>

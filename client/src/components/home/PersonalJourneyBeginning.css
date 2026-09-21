@@ -1,0 +1,420 @@
+.personal-journey-section {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 0;
+  background-color: var(--color-navy, #031633);
+  font-family: var(--font-sans);
+  overflow: hidden;
+  margin-top: -2px;
+  margin-bottom: -2px;
+}
+
+.personal-journey-container {
+  width: 100%;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 450px;
+  align-items: stretch;
+  background-color: var(--color-navy, #031633);
+}
+
+@media (max-width: 900px) {
+  .personal-journey-container {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+}
+
+/* Left Column: Real Selectable Text & Button */
+.personal-journey-content-col {
+  background-color: var(--color-navy, #031633);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 64px 48px 64px 80px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+@media (max-width: 1200px) {
+  .personal-journey-content-col {
+    padding: 56px 36px 56px 48px;
+  }
+}
+
+@media (max-width: 900px) {
+  .personal-journey-content-col {
+    justify-content: center;
+    padding: 48px 24px 54px;
+    text-align: center;
+  }
+}
+
+.personal-journey-content-inner {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@media (max-width: 900px) {
+  .personal-journey-content-inner {
+    align-items: center;
+  }
+}
+
+.personal-journey-heading {
+  font-family: var(--font-sans);
+  font-size: 38px;
+  font-weight: 300;
+  line-height: 1.28;
+  color: var(--bg-main, #F5F0EA);
+  margin: 0 0 36px 0;
+  letter-spacing: -0.01em;
+  user-select: text;
+}
+
+@media (max-width: 1200px) {
+  .personal-journey-heading {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .personal-journey-heading {
+    font-size: 26px;
+    margin-bottom: 28px;
+  }
+}
+
+/* Begin My Journey Pill Button */
+.personal-journey-cta-btn {
+  background: var(--bg-main, #F5F0EA);
+  color: var(--color-navy, #031633);
+  border: none;
+  border-radius: 30px;
+  padding: 14px 34px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 20px rgba(224, 197, 142, 0.25);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.personal-journey-cta-btn:hover {
+  background: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 28px rgba(224, 197, 142, 0.45);
+  color: #000a1a;
+}
+
+.personal-journey-cta-btn:active {
+  transform: translateY(0);
+}
+
+.personal-journey-cta-btn:focus-visible {
+  outline: 2px solid #DEBE7E;
+  outline-offset: 3px;
+}
+
+/* Right Column: Original Balcony/Ocean Photo */
+.personal-journey-photo-col {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-height: 450px;
+}
+
+.personal-journey-photo-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Interactive Journey Questionnaire Modal */
+.journey-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 12, 28, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 20px;
+  animation: journeyModalFade 0.25s ease-out forwards;
+  line-height: normal;
+}
+
+@keyframes journeyModalFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.journey-modal-card {
+  background: #041a3c;
+  color: var(--bg-main, #F5F0EA);
+  width: 100%;
+  max-width: 600px;
+  border-radius: 24px;
+  border: 1px solid rgba(222, 190, 126, 0.45);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75), 0 0 40px rgba(222, 190, 126, 0.16);
+  padding: 36px 40px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  animation: journeyModalSlide 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  box-sizing: border-box;
+}
+
+@keyframes journeyModalSlide {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.journey-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 22px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--bg-main, #F5F0EA);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.journey-modal-close:hover {
+  background: rgba(222, 190, 126, 0.2);
+  border-color: #DEBE7E;
+  color: #DEBE7E;
+}
+
+.journey-modal-badge {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #DEBE7E;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.journey-modal-title {
+  font-family: var(--font-sans);
+  font-size: 25px;
+  font-weight: 400;
+  color: var(--bg-main, #F5F0EA);
+  margin: 0 0 8px 0;
+  line-height: 1.25;
+}
+
+.journey-modal-subtitle {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: rgba(245, 240, 234, 0.78);
+  margin: 0 0 22px 0;
+}
+
+/* Questionnaire Options */
+.journey-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.journey-option-card {
+  background: rgba(2, 19, 46, 0.6);
+  border: 1px solid rgba(224, 197, 142, 0.3);
+  border-radius: 14px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.journey-option-card:hover {
+  border-color: rgba(222, 190, 126, 0.65);
+  background: rgba(8, 35, 77, 0.6);
+}
+
+.journey-option-card.active {
+  border-color: #DEBE7E;
+  background: rgba(8, 35, 77, 0.85);
+  box-shadow: 0 0 16px rgba(222, 190, 126, 0.22);
+}
+
+.journey-option-radio {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(222, 190, 126, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.journey-option-card.active .journey-option-radio {
+  border-color: #DEBE7E;
+}
+
+.radio-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: #DEBE7E;
+}
+
+.journey-option-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.journey-option-title {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--bg-main, #F5F0EA);
+  margin: 0;
+}
+
+.journey-option-desc {
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: rgba(245, 240, 234, 0.72);
+  margin: 0;
+}
+
+.journey-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.journey-modal-next-btn {
+  background: var(--color-terracotta, #BD5B3B);
+  color: #ffffff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  box-shadow: 0 6px 18px rgba(189, 91, 59, 0.4);
+  outline: none;
+  width: 100%;
+}
+
+.journey-modal-next-btn:hover {
+  background: #d16644;
+  transform: translateY(-1.5px);
+  box-shadow: 0 8px 24px rgba(189, 91, 59, 0.55);
+}
+
+/* Step 2 Recommendation Box */
+.journey-recommendation-box {
+  background: rgba(222, 190, 126, 0.09);
+  border: 1px solid rgba(222, 190, 126, 0.35);
+  border-radius: 16px;
+  padding: 20px 24px;
+  margin-bottom: 24px;
+}
+
+.recommendation-badge {
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #DEBE7E;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.recommendation-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--bg-main, #F5F0EA);
+  margin: 0 0 8px 0;
+}
+
+.recommendation-desc {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: rgba(245, 240, 234, 0.84);
+  margin: 0;
+}
+
+.journey-modal-footer {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.journey-modal-primary-cta {
+  background: var(--color-terracotta, #BD5B3B);
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 6px 18px rgba(189, 91, 59, 0.4);
+}
+
+.journey-modal-primary-cta:hover {
+  background: #d16644;
+  transform: translateY(-1.5px);
+}
+
+.journey-modal-secondary-btn {
+  background: transparent;
+  color: rgba(245, 240, 234, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 11px 20px;
+  border-radius: 30px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.journey-modal-secondary-btn:hover {
+  border-color: #DEBE7E;
+  color: #DEBE7E;
+}

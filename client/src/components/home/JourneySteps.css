@@ -1,0 +1,46 @@
+.journey-steps-section {
+  width: 100%;
+  margin: 0;
+  margin-bottom: -2px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  background-color: #031633;
+  position: relative;
+  z-index: 10;
+  line-height: 0;
+}
+
+.journey-steps-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.journey-steps-svg-wrapper {
+  width: 100%;
+  display: block;
+}
+
+.journey-steps-svg-wrapper svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Winding line drawing animation */
+.winding-line {
+  transition: stroke-dashoffset 0.1s ease-out;
+}
+
+/* Fade in items logic */
+.fade-in-item {
+  opacity: 0;
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(20px);
+}
+
+.fade-in-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

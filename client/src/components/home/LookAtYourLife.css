@@ -1,0 +1,248 @@
+.look-at-life-section {
+  width: 100%;
+  margin: 0;
+  margin-top: -2px;
+  margin-bottom: -2px;
+  padding: 0;
+  background-color: #02132E;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  position: relative;
+  font-family: var(--font-sans);
+  overflow: hidden;
+  line-height: 0;
+}
+
+.look-at-life-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Master SVG */
+.look-at-life-master-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 1440px;
+}
+
+/* Interactive SVG Perspective Cards */
+.perspective-svg-card {
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+}
+
+/* Glass Card Rectangles Interaction */
+.perspective-svg-card rect[stroke] {
+  transition: stroke 0.3s ease, stroke-width 0.3s ease, stroke-opacity 0.3s ease, filter 0.3s ease;
+}
+
+.perspective-svg-card rect[fill="#02132E"] {
+  transition: fill 0.3s ease, fill-opacity 0.3s ease;
+}
+
+.perspective-svg-card:hover rect[stroke],
+.perspective-svg-card:focus-visible rect[stroke],
+.perspective-svg-card.active rect[stroke] {
+  stroke: #DEBE7E;
+  stroke-opacity: 0.95;
+  stroke-width: 1.8px;
+  filter: drop-shadow(0 0 12px rgba(222, 190, 126, 0.45));
+}
+
+.perspective-svg-card:hover rect[fill="#02132E"],
+.perspective-svg-card:focus-visible rect[fill="#02132E"],
+.perspective-svg-card.active rect[fill="#02132E"] {
+  fill: #08234D;
+  fill-opacity: 0.48;
+}
+
+.perspective-svg-card:hover path,
+.perspective-svg-card:focus-visible path {
+  filter: drop-shadow(0 0 6px rgba(245, 240, 234, 0.35));
+}
+
+/* Perspective Detail Modal */
+.perspective-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 12, 28, 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 20px;
+  animation: perspectiveModalFade 0.25s ease-out forwards;
+}
+
+@keyframes perspectiveModalFade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.perspective-modal-content {
+  background: #041a3c;
+  color: var(--bg-main, #F5F0EA);
+  width: 100%;
+  max-width: 580px;
+  border-radius: 20px;
+  border: 1px solid rgba(222, 190, 126, 0.45);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75), 0 0 35px rgba(222, 190, 126, 0.18);
+  padding: 34px 38px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  animation: perspectiveModalSlide 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes perspectiveModalSlide {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.perspective-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--bg-main, #F5F0EA);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.perspective-modal-close:hover {
+  background: rgba(222, 190, 126, 0.2);
+  border-color: #DEBE7E;
+  color: #DEBE7E;
+}
+
+.perspective-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.perspective-modal-badge {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: #DEBE7E;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 3px;
+}
+
+.perspective-modal-title {
+  font-family: var(--font-sans);
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--bg-main, #F5F0EA);
+  margin: 0;
+}
+
+.perspective-modal-divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  margin: 14px 0 18px 0;
+}
+
+.perspective-modal-full-desc {
+  font-family: var(--font-sans);
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: rgba(245, 240, 234, 0.88);
+  margin: 0 0 20px 0;
+}
+
+.perspective-modal-points {
+  margin-bottom: 24px;
+}
+
+.perspective-modal-points-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #DEBE7E;
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.perspective-modal-points ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.perspective-modal-points li {
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: rgba(245, 240, 234, 0.82);
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+}
+
+.bullet-dot {
+  color: #DEBE7E;
+  font-size: 11px;
+}
+
+.perspective-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.perspective-modal-cta {
+  background: var(--color-terracotta, #BD5B3B);
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  outline: none;
+  box-shadow: 0 4px 14px rgba(189, 91, 59, 0.4);
+}
+
+.perspective-modal-cta:hover {
+  background: #d16644;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(189, 91, 59, 0.55);
+}

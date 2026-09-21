@@ -1,0 +1,41 @@
+.mind-body-soul-section {
+  width: 100%;
+  background-color: #031633;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.mind-body-soul-container {
+  width: 100%;
+  max-width: 1440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.mind-body-soul-header-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.mind-body-soul-header-svg {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+}
+
+.mind-body-soul-content-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.mind-body-soul-svg {
+  width: 100%;
+  height: auto;
+  max-width: 1200px;
+}

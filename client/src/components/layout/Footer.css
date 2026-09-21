@@ -1,0 +1,409 @@
+/* ==========================================================================
+   Akashvani Premium Dark Navy Footer
+   ========================================================================== */
+
+.akashvani-footer {
+  width: 100%;
+  background-color: #031633;
+  color: #F5F0EA;
+  padding: 64px 0 0 0;
+  margin: 0;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(224, 197, 142, 0.12);
+}
+
+.akashvani-footer-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  box-sizing: border-box;
+  gap: 48px;
+}
+
+/* Left Brand Column */
+.akashvani-footer-brand-col {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.akashvani-footer-logo-btn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.akashvani-footer-logo-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+.akashvani-footer-logo-svg {
+  width: 250px;
+  height: auto;
+  display: block;
+}
+
+/* Right Navigation Columns Grid */
+.akashvani-footer-nav-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(180px, 1fr));
+  gap: 48px;
+  flex: 1;
+  max-width: 780px;
+  justify-content: flex-end;
+}
+
+.akashvani-footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Column Header (Gold/Champagne #E0C58E) */
+.akashvani-footer-col-title {
+  font-family: 'Urbanist', 'Inter', -apple-system, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #E0C58E;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin: 0 0 4px 0;
+  line-height: 1.2;
+}
+
+/* Links List */
+.akashvani-footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.akashvani-footer-link {
+  font-family: 'Urbanist', 'Inter', sans-serif;
+  font-size: 14.5px;
+  font-weight: 400;
+  color: rgba(253, 250, 245, 0.78);
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  line-height: 1.4;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+  outline: none;
+}
+
+.akashvani-footer-link:hover {
+  color: #FFFFFF;
+  transform: translateX(3px);
+}
+
+/* ==========================================================================
+   Bottom Legal & Copyright Bar
+   ========================================================================== */
+
+.akashvani-footer-bottom {
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 24px 0 28px;
+  background-color: transparent;
+}
+
+.akashvani-footer-bottom-inner {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  gap: 20px;
+}
+
+.akashvani-footer-copyright {
+  font-family: 'Urbanist', 'Inter', -apple-system, sans-serif;
+  font-size: 13.5px;
+  font-weight: 400;
+  color: rgba(253, 250, 245, 0.55);
+  margin: 0;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+}
+
+.akashvani-footer-disclaimer {
+  font-family: 'Urbanist', 'Inter', -apple-system, sans-serif;
+  font-size: 13.5px;
+  font-weight: 400;
+  color: rgba(253, 250, 245, 0.55);
+  margin: 0;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  text-align: right;
+}
+
+/* ==========================================================================
+   Footer Interactive Modals
+   ========================================================================== */
+
+.footer-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(3, 22, 51, 0.8);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  padding: 20px;
+  box-sizing: border-box;
+  animation: footFade 0.2s ease-out;
+}
+
+.footer-modal {
+  position: relative;
+  background: #FAF7F2;
+  border: 1px solid #E6DDD0;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 580px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  padding: 36px;
+  box-sizing: border-box;
+  animation: footSlide 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  color: #112830;
+}
+
+.footer-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  color: #7A8699;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.footer-modal-close:hover {
+  color: #112830;
+}
+
+.footer-modal-badge {
+  display: inline-block;
+  background: rgba(189, 91, 59, 0.1);
+  color: #BD5B3B;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 5px 12px;
+  border-radius: 9999px;
+  margin-bottom: 12px;
+}
+
+.footer-modal-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #112830;
+  margin: 0 0 12px 0;
+  line-height: 1.25;
+}
+
+.footer-modal-p {
+  font-size: 14px;
+  color: #4A5568;
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+}
+
+.footer-modal-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.footer-modal-card {
+  background: #FFFFFF;
+  border: 1px solid #E6DDD0;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: left;
+}
+
+.footer-modal-card h4 {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #112830;
+  margin: 0 0 6px 0;
+}
+
+.footer-modal-card p {
+  font-size: 13px;
+  color: #637083;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.footer-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.footer-modal-input,
+.footer-modal-textarea {
+  font-family: inherit;
+  font-size: 14px;
+  padding: 12px 14px;
+  border: 1px solid #D6D3CD;
+  border-radius: 10px;
+  background: #FFFFFF;
+  color: #1A202C;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.footer-modal-input:focus,
+.footer-modal-textarea:focus {
+  border-color: #BD5B3B;
+}
+
+.footer-modal-btn {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: #FFFFFF;
+  background-color: #BD5B3B;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  align-self: flex-start;
+}
+
+.footer-modal-btn:hover {
+  background-color: #C86444;
+  transform: translateY(-1px);
+}
+
+.footer-modal-success-box {
+  background: #EDF7EE;
+  border: 1px solid #C8E6C9;
+  border-radius: 12px;
+  padding: 16px 18px;
+  color: #2E7D32;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@keyframes footFade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes footSlide {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .akashvani-footer-container {
+    flex-direction: column;
+    gap: 40px;
+    padding: 0 30px 40px;
+  }
+
+  .akashvani-footer-nav-grid {
+    max-width: 100%;
+    width: 100%;
+    justify-content: flex-start;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .akashvani-footer-nav-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+}
+
+@media (max-width: 540px) {
+  .akashvani-footer {
+    padding-top: 48px;
+  }
+
+  .akashvani-footer-container {
+    padding: 0 20px 32px;
+    gap: 32px;
+  }
+
+  .akashvani-footer-nav-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .akashvani-footer-bottom-inner {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .akashvani-footer-disclaimer {
+    text-align: center;
+  }
+
+  .akashvani-footer-logo-svg {
+    width: 200px;
+  }
+
+  .footer-modal {
+    padding: 24px 18px;
+  }
+}

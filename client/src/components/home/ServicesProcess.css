@@ -1,0 +1,59 @@
+.services-process-section {
+  width: 100%;
+  background-color: #031633;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.services-process-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.services-process-container svg {
+  width: 100%;
+  height: auto;
+  max-width: 1440px;
+  display: block;
+}
+
+.process-svg {
+  opacity: 0;
+  clip-path: inset(0 0 100% 0);
+  transition: opacity 0.3s ease;
+}
+
+.services-process-section.is-visible .process-svg {
+  opacity: 1;
+  animation: drawPath 3.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+@keyframes drawPath {
+  0% {
+    clip-path: inset(0 0 100% 0);
+  }
+
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.services-process-container svg text {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  user-select: none;
+}
+
+@media (max-width: 768px) {
+  .services-process-section {
+    padding: 30px 0;
+  }
+}

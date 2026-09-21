@@ -1,0 +1,499 @@
+.your-birth-chart-section {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 0;
+  background-color: var(--bg-main, #F5F0EA);
+  font-family: var(--font-sans);
+  overflow: hidden;
+}
+
+.your-birth-chart-container {
+  width: 100%;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 850px;
+  align-items: stretch;
+}
+
+@media (max-width: 960px) {
+  .your-birth-chart-container {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+}
+
+/* Left Column: Phone Mockup Visual stretching to the far left */
+.birth-chart-visual-col {
+  background-color: #E0C58E;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.birth-chart-phone-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 720px;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Right Column: Real Selectable Text stretching to the far right */
+.birth-chart-content-col {
+  background-color: var(--bg-main, #F5F0EA);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 64px 48px 64px 80px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+@media (max-width: 1200px) {
+  .birth-chart-content-col {
+    padding: 48px 32px 56px 48px;
+  }
+}
+
+@media (max-width: 960px) {
+  .birth-chart-content-col {
+    padding: 48px 24px 60px;
+  }
+}
+
+.birth-chart-content-inner {
+  width: 100%;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.birth-chart-subhead {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-navy, #031633);
+  margin-bottom: 22px;
+  display: block;
+  user-select: text;
+}
+
+.birth-chart-heading {
+  font-family: var(--font-sans);
+  font-size: 44px;
+  font-weight: 400;
+  line-height: 1.18;
+  color: var(--color-navy, #031633);
+  margin: 0 0 20px 0;
+  user-select: text;
+}
+
+@media (max-width: 1200px) {
+  .birth-chart-heading {
+    font-size: 38px;
+  }
+}
+
+@media (max-width: 768px) {
+  .birth-chart-heading {
+    font-size: 32px;
+  }
+}
+
+.birth-chart-serif-highlight {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 47px;
+  color: var(--color-terracotta, #BD5B3B);
+  display: inline;
+}
+
+@media (max-width: 1200px) {
+  .birth-chart-serif-highlight {
+    font-size: 41px;
+  }
+}
+
+@media (max-width: 768px) {
+  .birth-chart-serif-highlight {
+    font-size: 34px;
+  }
+}
+
+.birth-chart-body {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.62;
+  color: rgba(3, 22, 51, 0.82);
+  margin: 0 0 34px 0;
+  max-width: 480px;
+  user-select: text;
+}
+
+/* Clickable Make My Chart Button */
+.birth-chart-cta-btn {
+  background: var(--color-terracotta, #BD5B3B);
+  color: #ffffff;
+  border: none;
+  border-radius: 30px;
+  padding: 15px 38px;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 8px 24px rgba(189, 91, 59, 0.38);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.birth-chart-cta-btn:hover {
+  background: #d16644;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(189, 91, 59, 0.55);
+}
+
+.birth-chart-cta-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 14px rgba(189, 91, 59, 0.4);
+}
+
+.birth-chart-cta-btn:focus-visible {
+  outline: 2px solid var(--color-terracotta, #BD5B3B);
+  outline-offset: 3px;
+}
+
+/* Modal Backdrop */
+.birth-chart-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 12, 28, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 20px;
+  animation: chartModalFade 0.25s ease-out forwards;
+  line-height: normal;
+}
+
+@keyframes chartModalFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Modal Card */
+.birth-chart-modal-card {
+  background: #041a3c;
+  color: var(--bg-main, #F5F0EA);
+  width: 100%;
+  max-width: 620px;
+  border-radius: 24px;
+  border: 1px solid rgba(222, 190, 126, 0.45);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75), 0 0 40px rgba(222, 190, 126, 0.16);
+  padding: 36px 40px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  animation: chartModalSlide 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  box-sizing: border-box;
+}
+
+@keyframes chartModalSlide {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.birth-chart-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 22px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--bg-main, #F5F0EA);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.birth-chart-modal-close:hover {
+  background: rgba(222, 190, 126, 0.2);
+  border-color: #DEBE7E;
+  color: #DEBE7E;
+}
+
+.birth-chart-modal-badge {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #DEBE7E;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.birth-chart-modal-title {
+  font-family: var(--font-sans);
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--bg-main, #F5F0EA);
+  margin: 0 0 8px 0;
+}
+
+.birth-chart-modal-subtitle {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: rgba(245, 240, 234, 0.78);
+  margin: 0 0 24px 0;
+}
+
+/* Form Layout */
+.birth-chart-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.birth-chart-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 600px) {
+  .birth-chart-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.birth-chart-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.birth-chart-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(245, 240, 234, 0.88);
+  letter-spacing: 0.03em;
+}
+
+.birth-chart-input,
+.birth-chart-select {
+  background: rgba(2, 19, 46, 0.65);
+  border: 1px solid rgba(224, 197, 142, 0.35);
+  border-radius: 10px;
+  padding: 10px 14px;
+  color: var(--bg-main, #F5F0EA);
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.birth-chart-input:focus,
+.birth-chart-select:focus {
+  border-color: #DEBE7E;
+  box-shadow: 0 0 0 3px rgba(222, 190, 126, 0.2);
+}
+
+.birth-chart-actions {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.birth-chart-submit-cta {
+  background: var(--color-terracotta, #BD5B3B);
+  color: #ffffff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  box-shadow: 0 6px 18px rgba(189, 91, 59, 0.45);
+  outline: none;
+  width: 100%;
+}
+
+.birth-chart-submit-cta:hover {
+  background: #d16644;
+  transform: translateY(-1.5px);
+  box-shadow: 0 8px 24px rgba(189, 91, 59, 0.6);
+}
+
+/* Loading State */
+.birth-chart-loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 20px;
+  text-align: center;
+}
+
+.birth-chart-spinner {
+  width: 44px;
+  height: 44px;
+  border: 3px solid rgba(222, 190, 126, 0.25);
+  border-top-color: #DEBE7E;
+  border-radius: 50%;
+  animation: chartSpin 0.9s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes chartSpin {
+  to { transform: rotate(360deg); }
+}
+
+.birth-chart-loading-title {
+  font-size: 17px;
+  color: var(--bg-main, #F5F0EA);
+  margin: 0 0 8px 0;
+  font-weight: 500;
+}
+
+.birth-chart-loading-desc {
+  font-size: 13px;
+  color: rgba(245, 240, 234, 0.7);
+  margin: 0;
+}
+
+/* Result State */
+.birth-chart-grid-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 500px) {
+  .birth-chart-grid-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.birth-chart-stat-card {
+  background: rgba(2, 19, 46, 0.6);
+  border: 1px solid rgba(222, 190, 126, 0.3);
+  border-radius: 12px;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.birth-chart-stat-card .stat-label {
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #DEBE7E;
+  font-weight: 600;
+}
+
+.birth-chart-stat-card .stat-value {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--bg-main, #F5F0EA);
+}
+
+.birth-chart-insight-box {
+  background: rgba(222, 190, 126, 0.08);
+  border: 1px solid rgba(222, 190, 126, 0.35);
+  border-radius: 14px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+}
+
+.insight-title {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #DEBE7E;
+  margin: 0 0 6px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.insight-text {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: rgba(245, 240, 234, 0.88);
+  margin: 0;
+}
+
+.birth-chart-modal-footer {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.birth-chart-consult-cta {
+  background: var(--color-terracotta, #BD5B3B);
+  color: #ffffff;
+  border: none;
+  padding: 11px 22px;
+  border-radius: 25px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(189, 91, 59, 0.4);
+}
+
+.birth-chart-consult-cta:hover {
+  background: #d16644;
+  transform: translateY(-1.5px);
+}
+
+.birth-chart-reset-btn {
+  background: transparent;
+  color: rgba(245, 240, 234, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 10px 18px;
+  border-radius: 25px;
+  font-size: 12.5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.birth-chart-reset-btn:hover {
+  border-color: #DEBE7E;
+  color: #DEBE7E;
+}

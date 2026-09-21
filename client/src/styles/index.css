@@ -1,0 +1,108 @@
+/* Figma Source of Truth Design Tokens — Screen 1 */
+:root {
+  --bg-main: #F5F0EA;
+  --color-navy: #031633;
+  --color-terracotta: #BD5B3B;
+  --color-white-translucent: rgba(255, 255, 255, 0.35);
+
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Cormorant Garamond', 'Instrument Serif', Georgia, serif;
+
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-main);
+  color: var(--color-navy);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+main {
+  width: 100%;
+  position: relative;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+img,
+svg image {
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Animated Wavy Background Lines */
+.wavy-bg-svg path {
+  transform-origin: center center;
+  animation: waveMotion 15s ease-in-out infinite alternate;
+  will-change: transform, opacity;
+}
+
+.wavy-bg-svg path:nth-child(1) {
+  animation-duration: 12s;
+  animation-delay: 0s;
+}
+
+.wavy-bg-svg path:nth-child(2) {
+  animation-duration: 16s;
+  animation-delay: -3s;
+}
+
+.wavy-bg-svg path:nth-child(3) {
+  animation-duration: 14s;
+  animation-delay: -6s;
+}
+
+.wavy-bg-svg path:nth-child(4) {
+  animation-duration: 18s;
+  animation-delay: -2s;
+}
+
+.wavy-bg-svg path:nth-child(5) {
+  animation-duration: 15s;
+  animation-delay: -8s;
+}
+
+.wavy-bg-svg path:nth-child(6) {
+  animation-duration: 20s;
+  animation-delay: -4s;
+}
+
+@keyframes waveMotion {
+  0% {
+    transform: translateY(0px) scaleY(1);
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: translateY(-16px) scaleY(1.05);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(14px) scaleY(0.95);
+    opacity: 0.7;
+  }
+}
