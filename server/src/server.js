@@ -1,15 +1,21 @@
 import app from './app.js';
 import dotenv from 'dotenv';
+import connectDB from './config/db.js';
 
 dotenv.config();
 
 const INITIAL_PORT = parseInt(process.env.PORT, 10) || 5000;
 const MAX_PORT_ATTEMPTS = 10;
 
-function startServer(port, attempt = 0) {
+async function startServer(port, attempt = 0) {
   if (attempt >= MAX_PORT_ATTEMPTS) {
     console.error(`❌ Failed to find an available port after ${MAX_PORT_ATTEMPTS} attempts.`);
     process.exit(1);
+  }
+
+  // Connect to Database
+  if (attempt === 0) {
+    await connectDB();
   }
 
   const server = app.listen(port, () => {
@@ -29,4 +35,3 @@ function startServer(port, attempt = 0) {
 }
 
 startServer(INITIAL_PORT);
-
