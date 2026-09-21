@@ -16,14 +16,16 @@
   margin: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 850px;
-  align-items: stretch;
+  min-height: 450px;
+  max-height: 540px;
+  align-items: center;
 }
 
 @media (max-width: 960px) {
   .your-birth-chart-container {
     grid-template-columns: 1fr;
     min-height: auto;
+    max-height: none;
   }
 }
 
@@ -31,20 +33,44 @@
 .birth-chart-visual-col {
   background-color: #E0C58E;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   position: relative;
   overflow: hidden;
   width: 100%;
+  height: 100%;
+  min-height: 450px;
+  max-height: 540px;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 960px) {
+  .birth-chart-visual-col {
+    min-height: 360px;
+    max-height: 420px;
+    padding: 20px;
+  }
 }
 
 .birth-chart-phone-svg {
-  width: 100%;
+  width: auto;
+  max-width: 85%;
+  max-height: 460px;
   height: auto;
   display: block;
-  max-width: 720px;
+  object-fit: contain;
   pointer-events: none;
   user-select: none;
+  border-radius: 18px;
+  filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.18));
+}
+
+@media (max-width: 960px) {
+  .birth-chart-phone-svg {
+    max-height: 340px;
+    max-width: 90%;
+  }
 }
 
 /* Right Column: Real Selectable Text stretching to the far right */
@@ -53,26 +79,26 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 64px 48px 64px 80px;
+  padding: 40px 48px 40px 64px;
   box-sizing: border-box;
   width: 100%;
 }
 
 @media (max-width: 1200px) {
   .birth-chart-content-col {
-    padding: 48px 32px 56px 48px;
+    padding: 36px 32px 36px 40px;
   }
 }
 
 @media (max-width: 960px) {
   .birth-chart-content-col {
-    padding: 48px 24px 60px;
+    padding: 36px 24px 44px;
   }
 }
 
 .birth-chart-content-inner {
   width: 100%;
-  max-width: 520px;
+  max-width: 480px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -81,35 +107,35 @@
 
 .birth-chart-subhead {
   font-family: var(--font-sans);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--color-navy, #031633);
-  margin-bottom: 22px;
+  margin-bottom: 14px;
   display: block;
   user-select: text;
 }
 
 .birth-chart-heading {
   font-family: var(--font-sans);
-  font-size: 44px;
+  font-size: 34px;
   font-weight: 400;
-  line-height: 1.18;
+  line-height: 1.22;
   color: var(--color-navy, #031633);
-  margin: 0 0 20px 0;
+  margin: 0 0 16px 0;
   user-select: text;
 }
 
 @media (max-width: 1200px) {
   .birth-chart-heading {
-    font-size: 38px;
+    font-size: 30px;
   }
 }
 
 @media (max-width: 768px) {
   .birth-chart-heading {
-    font-size: 32px;
+    font-size: 26px;
   }
 }
 
@@ -117,30 +143,30 @@
   font-family: var(--font-serif);
   font-style: italic;
   font-weight: 400;
-  font-size: 47px;
+  font-size: 36px;
   color: var(--color-terracotta, #BD5B3B);
   display: inline;
 }
 
 @media (max-width: 1200px) {
   .birth-chart-serif-highlight {
-    font-size: 41px;
+    font-size: 32px;
   }
 }
 
 @media (max-width: 768px) {
   .birth-chart-serif-highlight {
-    font-size: 34px;
+    font-size: 28px;
   }
 }
 
 .birth-chart-body {
   font-family: var(--font-sans);
-  font-size: 15px;
-  line-height: 1.62;
+  font-size: 14.5px;
+  line-height: 1.55;
   color: rgba(3, 22, 51, 0.82);
-  margin: 0 0 34px 0;
-  max-width: 480px;
+  margin: 0 0 24px 0;
+  max-width: 440px;
   user-select: text;
 }
 
@@ -150,13 +176,13 @@
   color: #ffffff;
   border: none;
   border-radius: 30px;
-  padding: 15px 38px;
+  padding: 13px 32px;
   font-family: var(--font-sans);
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   outline: none;
-  box-shadow: 0 8px 24px rgba(189, 91, 59, 0.38);
+  box-shadow: 0 6px 20px rgba(189, 91, 59, 0.35);
   transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
   display: inline-flex;
   align-items: center;
@@ -166,12 +192,12 @@
 .birth-chart-cta-btn:hover {
   background: #d16644;
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(189, 91, 59, 0.55);
+  box-shadow: 0 10px 24px rgba(189, 91, 59, 0.5);
 }
 
 .birth-chart-cta-btn:active {
   transform: translateY(0);
-  box-shadow: 0 4px 14px rgba(189, 91, 59, 0.4);
+  box-shadow: 0 4px 12px rgba(189, 91, 59, 0.35);
 }
 
 .birth-chart-cta-btn:focus-visible {
