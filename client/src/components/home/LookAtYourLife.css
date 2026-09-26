@@ -376,46 +376,62 @@
 
 @media (max-width: 768px) {
   .look-at-life-section {
-    padding: 40px 16px;
+    padding: 32px 14px;
   }
   .look-at-life-card-main {
     border-radius: 20px;
   }
   .look-at-life-inner-content {
-    padding: 36px 20px 32px 20px;
+    padding: 30px 18px 28px 18px;
   }
   .look-at-life-header {
-    margin-bottom: 32px;
+    margin-bottom: 24px;
   }
   .look-at-life-main-title {
-    font-size: 28px;
+    font-size: 24px;
+    line-height: 1.25;
+  }
+  .look-at-life-subtitle {
+    font-size: 13px;
   }
   .look-at-life-grid {
     grid-template-columns: 1fr;
-    gap: 16px;
-    margin-bottom: 36px;
+    gap: 12px;
+    margin-bottom: 28px;
   }
   .perspective-card {
-    padding: 24px 22px;
+    padding: 20px 18px;
     min-height: auto;
-    border-radius: 18px;
+    border-radius: 16px;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
   }
   .perspective-icon-wrapper {
-    margin-bottom: 20px;
-    width: 48px;
-    height: 48px;
+    margin-bottom: 0;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
   }
   .perspective-vector-icon {
-    max-width: 48px;
-    max-height: 48px;
+    max-width: 40px;
+    max-height: 40px;
+  }
+  .perspective-card-bottom {
+    flex: 1;
   }
   .perspective-card-title {
-    font-size: 22px;
+    font-size: 20px;
   }
   .perspective-card-desc {
-    font-size: 13px;
+    font-size: 12.5px;
+    line-height: 1.4;
+  }
+  .look-at-life-footer {
+    padding: 6px 0 0 0;
   }
   .look-at-life-footer-text {
-    font-size: 26px;
+    font-size: 22px;
+    line-height: 1.3;
   }
 }

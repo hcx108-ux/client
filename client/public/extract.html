@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Extract Icons</title></head>
+<body>
+    <div id="svg-container" style="display:none;"></div>
+    <pre id="output"></pre>
+    <script>
+        fetch('/src/assets/journey_steps_full.svg')
+            .then(res => res.text())
+            .then(text => {
+                document.getElementById('svg-container').innerHTML = text;
+                const svgEl = document.querySelector('svg');
+                
+                // The icons are drawn over circles. Let's find all paths with fill="#F5F0EA"
+                const paths = Array.from(svgEl.querySelectorAll('*')).filter(el => 
+                    el.getAttribute('fill') === '#F5F0EA' || 
+                    el.getAttribute('stroke') === '#F5F0EA' ||
+                    (el.style && el.style.fill === '#F5F0EA')
+                );
+                
+                // Let's also find the background circles to get their coordinates
+                const circles = Array.from(svgEl.querySelectorAll('*')).filter(el => 
+                    el.getAttribute('fill') === '#E0C58E'
+                );
+
+                let out = 'Circles found: ' + circles.length + '\n';
+                circles.forEach((c, i) => {
+                    if (c.getBBox) {
+                        const box = c.getBBox();
+                        out += `Circle ${i+1}: ${box.x}, ${box.y}, ${box.width}x${box.height}\n`;
+                        
+                        // Find paths that fall inside or intersect this circle's bounding box
+                        const cx = box.x + box.width/2;
+                        const cy = box.y + box.height/2;
+                        const radius = box.width/2;
+                        
+                        const iconElements = paths.filter(p => {
+                            if (!p.getBBox) return false;
+                            const pBox = p.getBBox();
+                            // If the path is roughly near the circle
+                            const pcx = pBox.x + pBox.width/2;
+                            const pcy = pBox.y + pBox.height/2;
+                            const dist = Math.sqrt(Math.pow(pcx - cx, 2) + Math.pow(pcy - cy, 2));
+                            return dist < radius; 
+                        });
+                        
+                        out += `  -> Found ${iconElements.length} icon paths.\n`;
+                        iconElements.forEach(p => {
+                            out += `     ${p.outerHTML}\n`;
+                        });
+                    }
+                });
+
+                document.getElementById('output').textContent = out;
+            });
+    </script>
+</body>
+</html>

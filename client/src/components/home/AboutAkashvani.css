@@ -15,64 +15,83 @@
 /* Header Grid */
 .about-header-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 540px) minmax(0, 1fr);
   gap: 48px;
-  margin-bottom: 60px;
+  margin-bottom: 64px;
   align-items: flex-start;
 }
 
 .about-header-left {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  max-width: 480px;
+  gap: 28px;
+  max-width: 540px;
+  padding-top: 40px;
 }
 
 .about-top-tag {
-  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  font-family: var(--font-sans, 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif);
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
   color: #031633;
   text-transform: uppercase;
+  margin: 0;
+  line-height: 1.15;
 }
 
 .about-header-desc {
   font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
   font-size: 15px;
-  line-height: 1.65;
-  color: #334155;
+  line-height: 1.62;
+  color: rgba(3, 22, 51, 0.78);
+  font-weight: 400;
   margin: 0;
+  letter-spacing: 0.005em;
+  max-width: 540px;
+}
+
+.about-desc-br {
+  display: inline;
 }
 
 .about-header-right {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  padding-top: 0;
 }
 
 .about-sub-tag {
-  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
+  font-family: var(--font-sans, 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif);
+  font-size: 11.5px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
   color: #031633;
+  opacity: 0.72;
   text-transform: uppercase;
+  margin: 0 0 20px 0;
+  display: block;
 }
 
 .about-main-title {
-  font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
-  font-size: 46px;
-  line-height: 1.15;
+  font-family: var(--font-sans, 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif);
+  font-size: 38px;
+  line-height: 1.25;
   color: #031633;
   font-weight: 400;
   margin: 0;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.015em;
 }
 
 .about-italic-terracotta {
+  font-family: 'Cormorant Garamond', 'Instrument Serif', Georgia, serif;
+  font-size: 47px;
+  line-height: 1.15;
   color: #BD5B3B;
   font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.005em;
+  display: inline;
 }
 
 /* Cards Stack */
@@ -200,6 +219,8 @@
   transform: translateY(0);
 }
 
+
+
 /* Bottom Banner */
 .about-bottom-banner {
   display: flex;
@@ -210,17 +231,22 @@
 }
 
 .bottom-banner-heading {
-  font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
-  font-size: 40px;
-  line-height: 1.18;
+  font-family: var(--font-sans, 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif);
+  font-size: 38px;
+  line-height: 1.2;
   color: #031633;
   font-weight: 400;
+  letter-spacing: -0.02em;
   margin: 0;
 }
 
 .bottom-italic-terracotta {
+  font-family: 'Cormorant Garamond', var(--font-serif, Georgia, serif);
+  font-size: 47px;
   color: #BD5B3B;
   font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.005em;
 }
 
 .about-explore-btn {
@@ -500,14 +526,27 @@
   }
 }
 
+.dimension-carousel-indicators {
+  display: none;
+}
+
 /* ========================================================= */
 /* Responsive Media Queries */
 /* ========================================================= */
 @media (max-width: 960px) {
   .about-header-grid {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 32px;
     margin-bottom: 40px;
+  }
+
+  .about-header-left {
+    padding-top: 0;
+    gap: 16px;
+  }
+
+  .about-desc-br {
+    display: none;
   }
 
   .dimension-card,
@@ -517,7 +556,6 @@
     padding: 24px;
   }
 
-  /* Keep image first on mobile for consistency */
   .dimension-card-body .dimension-card-image-col {
     order: -1;
   }
@@ -539,20 +577,239 @@
 
 @media (max-width: 768px) {
   .about-akashvani-section {
-    padding: 60px 16px 70px;
+    padding: 40px 16px 50px;
+  }
+
+  /* Hide only the left intro header text block on mobile */
+  .about-header-left {
+    display: none !important;
+  }
+
+  .about-header-grid {
+    margin-bottom: 28px;
+  }
+
+  .about-top-tag {
+    font-size: 22px;
   }
 
   .about-main-title {
-    font-size: 32px;
+    font-size: 30px;
+    line-height: 1.25;
+  }
+
+  .about-italic-terracotta {
+    font-size: 36px;
+  }
+
+  /* Horizontal swipeable cards stack on mobile */
+  .about-cards-stack {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 0 4px 6px;
+    margin: 0 -4px;
+  }
+
+  .about-cards-stack::-webkit-scrollbar {
+    display: none;
+  }
+
+  .dimension-card,
+  .dimension-card-mind,
+  .dimension-card-body,
+  .dimension-card-soul {
+    display: flex !important;
+    flex-direction: column !important;
+    flex: 0 0 92%;
+    min-width: 0;
+    max-width: 380px;
+    scroll-snap-align: center;
+    border-radius: 22px !important;
+    padding: 22px 18px 18px !important;
+    background-color: #E8D8BA !important;
+    box-sizing: border-box;
+    margin: 0;
+    gap: 0 !important;
+  }
+
+  .dimension-card-content-col {
+    order: 1 !important;
+    padding: 0 !important;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+  }
+
+  .dimension-icon-wrapper {
+    margin-bottom: 8px;
+  }
+
+  .dimension-icon-wrapper svg {
+    width: 32px;
+    height: 32px;
   }
 
   .dimension-title {
-    font-size: 34px;
+    font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
+    font-size: 32px;
+    font-style: italic;
+    font-weight: 400;
+    color: #031633;
+    margin: 0 0 6px 0;
+    line-height: 1.1;
+  }
+
+  .dimension-subtitle {
+    font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+    font-size: 13.5px;
+    line-height: 1.45;
+    color: #031633;
+    margin: 0 0 14px 0;
+  }
+
+  .dimension-tags-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .dimension-tags-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
   }
 
   .dimension-tag-pill {
+    background: transparent;
+    border: 1px solid #031633;
+    border-radius: 999px;
+    padding: 5px 13px;
     font-size: 12.5px;
-    padding: 6px 14px;
+    font-weight: 500;
+    color: #031633;
+    font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+    line-height: 1.3;
+  }
+
+  .dimension-card-image-col,
+  .dimension-card-body .dimension-card-image-col {
+    order: 2 !important;
+    width: 100%;
+    height: 200px;
+    margin: 0;
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  .dimension-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+    display: block;
+  }
+
+  /* Carousel Indicators */
+  .dimension-carousel-indicators {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 18px;
+    margin-bottom: 28px;
+  }
+
+  .indicator-bars {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .indicator-pill {
+    background-color: #EADBC2;
+    height: 7px;
+    width: 32px;
+    border: none;
+    border-radius: 999px;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+
+  .indicator-pill.active {
+    background-color: #BD5B3B;
+    width: 42px;
+  }
+
+  .swipe-hint {
+    font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+    font-size: 12.5px;
+    font-weight: 500;
+    color: #BD5B3B;
+  }
+
+  /* Bottom Banner on Mobile */
+  .about-bottom-banner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
+    padding: 6px 0 16px;
+  }
+
+  .bottom-banner-left {
+    text-align: center;
+    width: 100%;
+  }
+
+  .bottom-banner-heading {
+    font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.25;
+    color: #031633;
+    margin: 0;
+    text-align: center;
+    letter-spacing: -0.01em;
+  }
+
+  .bottom-italic-terracotta {
+    font-family: 'Cormorant Garamond', var(--font-serif, Georgia, serif);
+    font-size: 27px;
+    font-style: italic;
+    color: #BD5B3B;
+    font-weight: 400;
+    display: block;
+    margin-top: 3px;
+    text-align: center;
+  }
+
+  .bottom-banner-right {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .about-explore-btn {
+    background-color: #031633;
+    color: #FFFFFF;
+    border-radius: 9999px;
+    padding: 13px 26px;
+    font-size: 13.5px;
+    font-weight: 600;
+    font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+    border: none;
+    box-shadow: 0 4px 14px rgba(3, 22, 51, 0.2);
+    width: auto;
+    letter-spacing: 0.02em;
+    text-align: center;
   }
 
   .about-modal-body {

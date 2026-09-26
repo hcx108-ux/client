@@ -138,11 +138,12 @@ export default function ChooseTheLevel() {
             <div className="guidance-card-right">
               <div className="card-right-bg-waves" aria-hidden="true">
                 <svg width="240" height="398" viewBox="0 0 240 398" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M120 0C180 80 260 140 180 240C100 340 160 398 220 398" stroke="#BD5B3B" strokeWidth="1.5" strokeOpacity="0.18" fill="none" />
-                  <path d="M160 0C220 90 290 150 210 250C130 350 190 398 250 398" stroke="#BD5B3B" strokeWidth="1.5" strokeOpacity="0.12" fill="none" />
-                  <path d="M80 0C140 70 230 130 150 230C70 330 130 398 190 398" stroke="#BD5B3B" strokeWidth="1.5" strokeOpacity="0.1" fill="none" />
+                  <path d="M60 -20C130 60 220 120 200 220C180 320 220 380 260 420" stroke="#E5DEC9" strokeWidth="16" strokeOpacity="0.45" strokeLinecap="round" fill="none" />
+                  <path d="M120 -40C190 40 280 100 260 200C240 300 280 360 320 400" stroke="#E5DEC9" strokeWidth="12" strokeOpacity="0.35" strokeLinecap="round" fill="none" />
+                  <path d="M0 0C70 80 160 140 140 240C120 340 160 400 200 440" stroke="#E5DEC9" strokeWidth="10" strokeOpacity="0.25" strokeLinecap="round" fill="none" />
                 </svg>
               </div>
+
 
               <div className="pricing-content">
                 <span className="pricing-currency-label">{currency}</span>

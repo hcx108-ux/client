@@ -56,32 +56,46 @@
 }
 
 .meet-people-main-title {
-  font-family: var(--font-sans);
-  font-size: 38px;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 48px;
   font-weight: 300;
   color: var(--bg-main, #F5F0EA);
-  letter-spacing: -0.01em;
+  letter-spacing: normal;
   margin: 0;
   line-height: 1.2;
 }
 
 .meet-people-serif-title {
-  font-family: var(--font-serif);
+  font-family: "Cormorant Garamond", serif;
   font-style: italic;
-  font-size: 46px;
-  font-weight: 400;
+  font-size: 56px;
+  font-weight: 500;
   color: #DEBE7E;
   display: block;
   margin: 2px 0 18px 0;
   line-height: 1.15;
 }
 
+.meet-people-serif-title.inline {
+  display: inline;
+  margin: 0;
+}
+
 .meet-people-description {
-  font-family: var(--font-sans);
-  font-size: 13.5px;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 15.5px;
+  font-weight: 400;
   line-height: 1.6;
   color: rgba(245, 240, 234, 0.72);
   margin: 0;
+}
+
+.mobile-header-content {
+  display: none;
+}
+
+.desktop-header-content {
+  display: block;
 }
 
 /* Guidance Cards List */
@@ -152,12 +166,12 @@
 }
 
 .guidance-card-title {
-  font-family: var(--font-sans);
-  font-size: 16.5px;
-  font-weight: 500;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 22px;
+  font-weight: 300;
   color: var(--bg-main, #F5F0EA);
   margin: 0;
-  line-height: 1.3;
+  line-height: 1.2;
 }
 
 .guidance-card-subtitle {
@@ -214,8 +228,8 @@
 }
 
 .carousel-arrow-btn {
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   background-color: var(--color-terracotta, #BD5B3B);
   color: #ffffff;
@@ -275,6 +289,7 @@
     opacity: 0.7;
     transform: scale(1.03);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -297,6 +312,7 @@
     opacity: 0;
     transform: translateY(6px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -312,12 +328,12 @@
 }
 
 .practitioner-name {
-  font-family: var(--font-sans);
+  font-family: "Josefin Sans", sans-serif;
   font-size: 30px;
-  font-weight: 400;
+  font-weight: 300;
   color: var(--bg-main, #F5F0EA);
   margin: 0;
-  letter-spacing: -0.01em;
+  letter-spacing: normal;
   line-height: 1.1;
 }
 
@@ -337,13 +353,16 @@
 .exp-text {
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  font-family: "Josefin Sans", sans-serif;
   font-size: 13px;
   line-height: 1.2;
 }
 
 .exp-text strong {
   color: var(--bg-main, #F5F0EA);
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .exp-text small {
@@ -364,17 +383,18 @@
   background: transparent;
   border: 1px solid rgba(245, 240, 234, 0.65);
   color: var(--bg-main, #F5F0EA);
+  font-family: "Josefin Sans", sans-serif;
   font-size: 11.5px;
   font-weight: 400;
-  letter-spacing: 0.3px;
+  letter-spacing: normal;
   padding: 4px 14px;
   border-radius: 20px;
 }
 
 /* Quote */
 .practitioner-quote {
-  font-family: var(--font-sans);
-  font-size: 13px;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 14.5px;
   line-height: 1.5;
   color: rgba(245, 240, 234, 0.88);
   margin: 0 0 16px 0;
@@ -453,6 +473,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -481,6 +502,7 @@
     opacity: 0;
     transform: scale(0.94) translateY(12px);
   }
+
   to {
     opacity: 1;
     transform: scale(1) translateY(0);
@@ -641,61 +663,430 @@
     text-align: center;
   }
 
-  .meet-people-right {
-    order: -1;
-  }
+  /* Content stays on top, image/portrait goes below — no order change */
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .meet-people-section {
-    padding: 56px 16px 64px;
+    padding: 56px 16px 72px;
+  }
+
+  .meet-people-container {
+    gap: 40px;
+  }
+
+  /* LEFT-ALIGNED on mobile to match Figma */
+  .meet-people-left {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .meet-people-header {
+    margin-bottom: 24px;
+  }
+
+  .mobile-header-content {
+    display: block;
+  }
+
+  .desktop-header-content {
+    display: none;
   }
 
   .meet-people-main-title {
-    font-size: 28px;
+    font-size: 38px;
+    line-height: 1.15;
   }
 
   .meet-people-serif-title {
-    font-size: 34px;
+    font-size: 44px;
+    margin: 2px 0 14px 0;
   }
 
-  .practitioner-oval-frame {
-    width: 250px;
-    height: 350px;
-    border-radius: 125px;
+  .meet-people-description {
+    font-size: 14.5px;
+    line-height: 1.55;
+    max-width: 100%;
+    margin: 16px 0 0 0;
+    text-align: left;
   }
 
-  .practitioner-meta-section {
-    width: 250px;
+  /* Hide left circle icon on mobile — Figma design doesn't show it */
+  .guidance-circle-icon {
+    display: none;
+  }
+
+  /* Guidance Cards — mobile */
+  .guidance-cards-list {
+    gap: 12px;
   }
 
   .guidance-card-item {
-    padding: 14px 16px;
-    min-height: 84px;
+    padding: 18px 22px;
+    min-height: auto;
     gap: 14px;
+    border-radius: 20px;
+    background: rgba(216, 182, 117, 0.1);
+    border: 1px solid rgba(216, 182, 117, 0.25);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: none;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  .guidance-circle-icon {
-    width: 36px;
-    height: 36px;
+  .guidance-card-item:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .guidance-card-item.active {
+    background: rgba(216, 182, 117, 0.1);
+    border: 1px solid #D8B675;
+    box-shadow: none;
+  }
+
+  .guidance-card-content {
+    flex: 1;
+    gap: 6px;
   }
 
   .guidance-card-title {
-    font-size: 15px;
+    font-size: 20px;
+    text-align: left;
+    font-weight: 300;
+    color: var(--bg-main, #F5F0EA);
+  }
+
+  .guidance-card-subtitle {
+    font-size: 11.5px;
+    line-height: 1.45;
+    text-align: left;
+    color: rgba(245, 240, 234, 0.6);
+  }
+
+  /* Radio indicators — match Figma sizing */
+  .guidance-radio-wrapper {
+    width: 32px;
+    height: 32px;
+  }
+
+  .guidance-radio-checked-dot {
+    width: 28px;
+    height: 28px;
+    border: 3px solid var(--bg-main, #F5F0EA);
+  }
+
+  .guidance-radio-hollow-ring {
+    width: 28px;
+    height: 28px;
+    border: 2px solid var(--bg-main, #F5F0EA);
+  }
+
+  /* Portrait / Image Section — below content on mobile */
+  .meet-people-right {
+    align-items: center;
+  }
+
+  .portrait-carousel-stage {
+    gap: 12px;
+  }
+
+  .carousel-arrow-btn {
+    width: 48px;
+    height: 44px;
+    border-radius: 22px;
+    z-index: 2;
+    margin: 0;
+  }
+
+  .practitioner-oval-frame {
+    width: 223px;
+    height: 293px;
+    border-radius: 111.5px;
+    border-width: 8px;
+    z-index: 1;
+  }
+
+  .practitioner-meta-section {
+    width: 100%;
+    max-width: 320px;
+    margin-top: 20px;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .practitioner-name {
+    font-size: 26px;
+  }
+
+  .practitioner-name-row {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .practitioner-tags-row {
+    justify-content: flex-start;
+    margin-bottom: 14px;
+  }
+
+  .practitioner-quote {
+    font-size: 14.5px;
+    text-align: left;
+  }
+
+  .practitioner-book-action {
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  /* Booking Modal — mobile */
+  .team-modal-body {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .team-modal-photo-wrapper {
+    width: 160px;
+    height: 200px;
+    border-radius: 80px;
+    margin: 0 auto;
+  }
+
+  .team-modal-left {
+    align-items: center;
+  }
+
+  .team-modal-content {
+    padding: 28px 20px;
+    max-height: 90vh;
+  }
+
+  .team-modal-name {
+    text-align: center;
+  }
+
+  .team-modal-role {
+    text-align: center;
+  }
+
+  .team-modal-badge {
+    align-self: center;
+  }
+
+  .team-modal-actions {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .meet-people-section {
+    padding: 48px 16px 40px;
+  }
+
+  .meet-people-container {
+    gap: 32px;
+  }
+
+  /* Left-aligned on small mobile — matching Figma */
+  .meet-people-left {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .meet-people-header {
+    margin-bottom: 20px;
+  }
+
+  .meet-people-main-title {
+    font-size: 36px;
+    line-height: 1.15;
+  }
+
+  .meet-people-serif-title {
+    font-size: 42px;
+    margin: 2px 0 14px 0;
+  }
+
+  .meet-people-description {
+    font-size: 14.5px;
+    line-height: 1.55;
+    max-width: 100%;
+    margin: 16px 0 0 0;
+    text-align: left;
+  }
+
+  /* Hide left circle icon on mobile */
+  .guidance-circle-icon {
+    display: none;
+  }
+
+  /* Cards — smaller mobile, match Figma exactly */
+  .guidance-cards-list {
+    gap: 10px;
+  }
+
+  .guidance-card-item {
+    padding: 16px 20px;
+    min-height: auto;
+    gap: 12px;
+    border-radius: 20px;
+    background: rgba(216, 182, 117, 0.1);
+    border: 1px solid rgba(216, 182, 117, 0.25);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: none;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .guidance-card-item:hover {
+    transform: none;
+    box-shadow: none;
+    background: rgba(216, 182, 117, 0.1);
+    border-color: rgba(216, 182, 117, 0.25);
+  }
+
+  .guidance-card-item.active {
+    background: rgba(216, 182, 117, 0.1);
+    border: 1px solid #D8B675;
+    box-shadow: none;
+  }
+
+  .guidance-card-content {
+    flex: 1;
+    gap: 4px;
+  }
+
+  .guidance-card-title {
+    font-size: 19px;
+    font-weight: 300;
+    text-align: left;
   }
 
   .guidance-card-subtitle {
     font-size: 11px;
+    line-height: 1.45;
+    text-align: left;
+    color: rgba(245, 240, 234, 0.55);
   }
 
-  .team-modal-body {
-    grid-template-columns: 1fr;
-    gap: 20px;
+  /* Radio indicators */
+  .guidance-radio-wrapper {
+    width: 30px;
+    height: 30px;
   }
 
-  .team-modal-photo-wrapper {
-    width: 140px;
-    height: 180px;
-    border-radius: 70px;
+  .guidance-radio-checked-dot {
+    width: 26px;
+    height: 26px;
+    border: 3px solid var(--bg-main, #F5F0EA);
+  }
+
+  .guidance-radio-hollow-ring {
+    width: 26px;
+    height: 26px;
+    border: 2px solid var(--bg-main, #F5F0EA);
+  }
+
+  /* Portrait — smaller mobile */
+  .portrait-carousel-stage {
+    gap: 10px;
+  }
+
+  .carousel-arrow-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 14px;
+  }
+
+  .practitioner-oval-frame {
+    width: 220px;
+    height: 290px;
+    border-radius: 110px;
+    border-width: 4px;
+  }
+
+  .practitioner-meta-section {
+    width: 100%;
+    padding: 0 12px;
+    margin-top: 18px;
+  }
+
+  .practitioner-name {
+    font-size: 22px;
+  }
+
+  .practitioner-tags-row {
+    gap: 6px;
+  }
+
+  .practitioner-pill-tag {
+    font-size: 10.5px;
+    padding: 3px 10px;
+  }
+
+  .practitioner-quote {
+    font-size: 12.5px;
+  }
+
+  .book-session-link-btn {
+    font-size: 10px;
+  }
+}
+
+/* Extra small mobile (375px and below) — Figma reference width */
+@media (max-width: 390px) {
+  .meet-people-section {
+    padding: 44px 16px 36px;
+  }
+
+  .meet-people-main-title {
+    font-size: 32px;
+  }
+
+  .meet-people-serif-title {
+    font-size: 38px;
+    margin: 2px 0 10px 0;
+  }
+
+  .meet-people-description {
+    font-size: 13.5px;
+    line-height: 1.5;
+  }
+
+  .guidance-card-item {
+    padding: 14px 18px;
+    border-radius: 18px;
+  }
+
+  .guidance-card-title {
+    font-size: 18px;
+  }
+
+  .guidance-card-subtitle {
+    font-size: 10.5px;
+  }
+
+  .guidance-radio-checked-dot {
+    width: 24px;
+    height: 24px;
+  }
+
+  .guidance-radio-hollow-ring {
+    width: 24px;
+    height: 24px;
+  }
+
+  .practitioner-oval-frame {
+    width: 200px;
+    height: 270px;
+    border-radius: 100px;
+    border-width: 4px;
   }
 }

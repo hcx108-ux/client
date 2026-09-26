@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './AboutAkashvani.css';
 
 import mindImg from '../../assets/about_akashvani_img_0.jpeg';
@@ -9,6 +9,8 @@ export default function AboutAkashvani() {
   const [selectedTag, setSelectedTag] = useState(null);
   const [showExploreModal, setShowExploreModal] = useState(false);
   const [activeDimension, setActiveDimension] = useState('mind');
+  const [activeSlide, setActiveSlide] = useState(0);
+  const cardsStackRef = useRef(null);
 
   const dimensionInsights = {
     'Emotions': {
@@ -103,12 +105,25 @@ export default function AboutAkashvani() {
     }
   };
 
-  const handleTagClick = (tag) => {
-    setSelectedTag(tag);
+  const handleCardsScroll = (e) => {
+    const el = e.target;
+    const scrollLeft = el.scrollLeft;
+    const cardWidth = el.offsetWidth * 0.85 || 1;
+    const idx = Math.round(scrollLeft / cardWidth);
+    if (idx >= 0 && idx <= 2 && idx !== activeSlide) {
+      setActiveSlide(idx);
+    }
   };
 
-  const closeTagModal = () => {
-    setSelectedTag(null);
+  const scrollToCard = (index) => {
+    if (cardsStackRef.current) {
+      const cardWidth = cardsStackRef.current.offsetWidth * 0.88;
+      cardsStackRef.current.scrollTo({
+        left: index * cardWidth,
+        behavior: 'smooth'
+      });
+      setActiveSlide(index);
+    }
   };
 
   return (
@@ -119,9 +134,11 @@ export default function AboutAkashvani() {
         <div className="about-header-grid">
           {/* Left Column: Tag & Intro */}
           <div className="about-header-left">
-            <span className="about-top-tag">ABOUT AKASHVANI</span>
+            <h3 className="about-top-tag">ABOUT AKASHVANI</h3>
             <p className="about-header-desc">
-              We bring together Vedic wisdom, spiritual perspectives, practical guidance and experienced practitioners to help you understand what you're experiencing and explore what may come next.
+              We bring together Vedic wisdom, spiritual perspectives, practical<br className="about-desc-br" />
+              guidance and experienced practitioners to help you understand what<br className="about-desc-br" />
+              you're experiencing and explore what may come next.
             </p>
           </div>
 
@@ -137,7 +154,11 @@ export default function AboutAkashvani() {
         </div>
 
         {/* Dimension Cards Stack */}
-        <div className="about-cards-stack">
+        <div 
+          className="about-cards-stack"
+          ref={cardsStackRef}
+          onScroll={handleCardsScroll}
+        >
           
           {/* Card 1: MIND */}
           <div className="dimension-card dimension-card-mind">
@@ -159,7 +180,7 @@ export default function AboutAkashvani() {
               </div>
 
               <h3 className="dimension-title">Mind</h3>
-              <p className="dimension-subtitle">Understand What Is Happening Within.</p>
+              <p className="dimension-subtitle">Understand what is happening within.</p>
 
               <div className="dimension-tags-group">
                 <div className="dimension-tags-row">
@@ -314,12 +335,28 @@ export default function AboutAkashvani() {
 
         </div>
 
+        {/* Mobile Swipe Indicators */}
+        <div className="dimension-carousel-indicators" aria-hidden="true">
+          <div className="indicator-bars">
+            {[0, 1, 2].map((idx) => (
+              <button
+                key={idx}
+                type="button"
+                className={`indicator-pill ${activeSlide === idx ? 'active' : ''}`}
+                onClick={() => scrollToCard(idx)}
+                aria-label={`Go to slide ${idx + 1}`}
+              />
+            ))}
+          </div>
+          <span className="swipe-hint">Swipe →</span>
+        </div>
+
         {/* Bottom Banner Section */}
         <div className="about-bottom-banner">
           <div className="bottom-banner-left">
             <h3 className="bottom-banner-heading">
-              One Life. Three Dimensions.<br />
-              <span className="bottom-italic-terracotta">A More Whole Way Of Living.</span>
+              One life. Three dimensions.<br />
+              <span className="bottom-italic-terracotta">A more whole way of living.</span>
             </h3>
           </div>
 
@@ -328,9 +365,9 @@ export default function AboutAkashvani() {
               type="button"
               className="about-explore-btn"
               onClick={() => setShowExploreModal(true)}
-              aria-label="Explore Mind Body Soul"
+              aria-label="Explore Mind · Body · Soul"
             >
-              Explore Mind · Body · Soul <span className="explore-arrow">→</span>
+              Explore Mind · Body · Soul
             </button>
           </div>
         </div>

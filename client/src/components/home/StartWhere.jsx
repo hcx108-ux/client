@@ -93,8 +93,9 @@ export default function StartWhere() {
         {/* Central Hero Heading */}
         <div className="start-where-header">
           <h2 className="start-where-heading">
-            Start Where You Are. Explore What<br />
-            You're <span className="start-where-italic">Ready To Understand.</span>
+            Start Where You Are.<br />
+            Explore What You're<br />
+            <span className="start-where-italic">Ready To Understand.</span>
           </h2>
         </div>
 

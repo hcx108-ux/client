@@ -27,7 +27,8 @@ export default function PersonalJourneyBeginning() {
         <div className="personal-journey-content-col">
           <div className="personal-journey-content-inner">
             <h2 className="personal-journey-heading">
-              A personal journey, beginning<br />
+              A personal journey,<br />
+              beginning<br />
               with a simple question.
             </h2>
 

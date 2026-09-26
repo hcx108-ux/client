@@ -1,0 +1,199 @@
+<svg width="688" height="890" viewBox="0 0 688 890" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+  <defs>
+    <!-- Organic chalk & sand grain texture filter matching the Figma brush stroke -->
+    <filter id="sandChalkFilter" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.08 0.12" numOctaves="4" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="G" result="chalkyStroke" />
+      <feGaussianBlur in="chalkyStroke" stdDeviation="0.3" result="softChalk" />
+      <feMerge>
+        <feMergeNode in="softChalk" />
+        <feMergeNode in="SourceGraphic" opacity="0.85" />
+      </feMerge>
+    </filter>
+
+    <!-- Gradients for subtle sand depth -->
+    <linearGradient id="chalkGradBL" x1="0" y1="550" x2="200" y2="890" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFDF7" stop-opacity="0.95" />
+      <stop offset="50%" stop-color="#F9ECCE" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#ECD49E" stop-opacity="0.6" />
+    </linearGradient>
+
+    <linearGradient id="chalkGradTR" x1="400" y1="0" x2="688" y2="250" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFDF7" stop-opacity="0.95" />
+      <stop offset="50%" stop-color="#F9ECCE" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#ECD49E" stop-opacity="0.6" />
+    </linearGradient>
+  </defs>
+
+  <!-- Solid Sand Base Color -->
+  <rect width="688" height="890" fill="#E0C58E" />
+
+  <!-- Textured Sand Waves in Bottom-Left and Top-Right Corners -->
+  <g filter="url(#sandChalkFilter)">
+    
+    <!-- ==================== TOP-RIGHT CORNER WAVES ==================== -->
+    <!-- Outer Arc TR 1 -->
+    <path 
+      d="M 440,-15 C 470,60 540,120 610,165 C 645,185 675,198 705,205" 
+      stroke="url(#chalkGradTR)" 
+      stroke-width="26" 
+      stroke-linecap="round"
+      fill="none" 
+    />
+    <path 
+      d="M 430,-15 C 460,55 530,115 600,160 C 638,180 670,192 705,200" 
+      stroke="#FFFDF8" 
+      stroke-width="10" 
+      stroke-linecap="round"
+      opacity="0.75"
+      fill="none" 
+    />
+
+    <!-- Arc TR 2 -->
+    <path 
+      d="M 495,-15 C 525,50 585,100 645,138 C 670,152 690,160 705,165" 
+      stroke="url(#chalkGradTR)" 
+      stroke-width="24" 
+      stroke-linecap="round"
+      fill="none" 
+    />
+    <path 
+      d="M 488,-15 C 518,45 578,95 638,132 C 665,148 685,155 705,160" 
+      stroke="#FFF9EA" 
+      stroke-width="9" 
+      stroke-linecap="round"
+      opacity="0.7"
+      fill="none" 
+    />
+
+    <!-- Arc TR 3 -->
+    <path 
+      d="M 555,-15 C 580,40 630,80 675,110 C 690,120 700,125 705,128" 
+      stroke="url(#chalkGradTR)" 
+      stroke-width="22" 
+      stroke-linecap="round"
+      fill="none" 
+    />
+    <path 
+      d="M 548,-15 C 572,35 622,75 668,105 C 685,115 695,120 705,124" 
+      stroke="#FFFBF0" 
+      stroke-width="8" 
+      stroke-linecap="round"
+      opacity="0.7"
+      fill="none" 
+    />
+
+    <!-- Arc TR 4 -->
+    <path 
+      d="M 615,-15 C 635,30 670,60 705,82" 
+      stroke="url(#chalkGradTR)" 
+      stroke-width="20" 
+      stroke-linecap="round"
+      fill="none" 
+    />
+    <path 
+      d="M 610,-15 C 630,25 665,55 705,76" 
+      stroke="#FFFDF6" 
+      stroke-width="7" 
+      stroke-linecap="round"
+      opacity="0.65"
+      fill="none" 
+    />
+
+    <!-- Sub-ripples TR -->
+    <path d="M 465,-10 C 500,45 560,95 630,135 C 660,150 685,160 705,165" stroke="#FFF7DE" stroke-width="5" opacity="0.45" fill="none" />
+    <path d="M 525,-10 C 555,35 605,75 660,105" stroke="#FFF9EB" stroke-width="5" opacity="0.4" fill="none" />
+
+
+    <!-- ==================== BOTTOM-LEFT CORNER WAVES ==================== -->
+    <!-- Outer Main Arc BL 1 -->
+    <path 
+      d="M -15,570 C 45,580 95,640 120,720 C 138,780 148,840 152,905" 
+      stroke="url(#chalkGradBL)" 
+      stroke-width="26" 
+      stroke-linecap="round"
+      fill="none" 
+    />
+    <path 
+      d="M -15,560 C 42,570 90,630 115,710 C 132,770 142,830 146,905" 
+      stroke="#FFFDF8" 
+      stroke-width="10" 
+      stroke-linecap="round"
+      opacity="0.75"
+      fill="none" 
+    />
+
+    <!-- Arc BL 2 -->
+    <path 
+      d="M -15,635 C 38,645 80,700 100,770 C 116,825 122,865 125,905" 
+      stroke="url(#chalkGradBL)" 
+      stroke-width="24" 
+      stroke-linecap="round"
+      fill="none" 
+    />
+    <path 
+      d="M -15,625 C 35,635 75,690 95,760 C 110,815 116,855 119,905" 
+      stroke="#FFF9EA" 
+      stroke-width="9" 
+      stroke-linecap="round"
+      opacity="0.7"
+      fill="none" 
+    />
+
+    <!-- Arc BL 3 -->
+    <path 
+      d="M -15,700 C 30,710 65,755 80,815 C 92,860 97,885 99,905" 
+      stroke="url(#chalkGradBL)" 
+      stroke-width="22" 
+      stroke-linecap="round"
+      fill="none" 
+    />
+    <path 
+      d="M -15,690 C 28,700 60,745 75,805 C 87,850 91,875 93,905" 
+      stroke="#FFFBF0" 
+      stroke-width="8" 
+      stroke-linecap="round"
+      opacity="0.7"
+      fill="none" 
+    />
+
+    <!-- Arc BL 4 -->
+    <path 
+      d="M -15,765 C 22,775 48,810 60,855 C 68,885 71,895 72,905" 
+      stroke="url(#chalkGradBL)" 
+      stroke-width="20" 
+      stroke-linecap="round"
+      fill="none" 
+    />
+    <path 
+      d="M -15,755 C 20,765 44,800 55,845 C 63,875 66,888 67,905" 
+      stroke="#FFFDF6" 
+      stroke-width="7" 
+      stroke-linecap="round"
+      opacity="0.65"
+      fill="none" 
+    />
+
+    <!-- Arc BL 5 (Innermost Corner Arc) -->
+    <path 
+      d="M -15,830 C 14,838 32,860 40,885 C 44,895 46,900 47,905" 
+      stroke="url(#chalkGradBL)" 
+      stroke-width="18" 
+      stroke-linecap="round"
+      fill="none" 
+    />
+    <path 
+      d="M -15,822 C 12,830 28,852 35,877 C 39,887 41,895 42,905" 
+      stroke="#FFFDF8" 
+      stroke-width="6" 
+      stroke-linecap="round"
+      opacity="0.6"
+      fill="none" 
+    />
+
+    <!-- Sub-ripples BL -->
+    <path d="M -10,600 C 35,612 70,665 90,735 C 102,785 110,845 114,905" stroke="#FFF7DE" stroke-width="5" opacity="0.45" fill="none" />
+    <path d="M -10,668 C 26,678 55,725 70,785 C 80,830 85,870 87,905" stroke="#FFF9EB" stroke-width="5" opacity="0.4" fill="none" />
+    <path d="M -10,732 C 18,742 38,780 48,825 C 55,860 58,885 60,905" stroke="#FFF6DE" stroke-width="4" opacity="0.4" fill="none" />
+  </g>
+</svg>

@@ -30,6 +30,7 @@
 }
 
 .offers-title {
+  font-family: 'Plus Jakarta Sans', 'Josefin Sans', sans-serif;
   font-size: 38px;
   font-weight: 500;
   color: #F5F0EA;
@@ -38,6 +39,7 @@
 }
 
 .offers-subtitle {
+  font-family: 'Plus Jakarta Sans', 'Josefin Sans', sans-serif;
   font-size: 16px;
   color: #F5F0EA;
   opacity: 0.8;
@@ -45,7 +47,7 @@
   font-weight: 300;
 }
 
-.offers-svg-wrapper {
+.offers-desktop-wrapper {
   position: relative;
   width: 100%;
   max-width: 1440px;
@@ -54,7 +56,7 @@
   justify-content: center;
 }
 
-.offers-svg-wrapper svg {
+.offers-desktop-wrapper svg {
   width: 100%;
   height: auto;
   display: block;
@@ -64,31 +66,173 @@
   position: absolute;
   transform: translateX(-50%);
   text-align: center;
-  width: 320px;
+  width: 380px;
+  max-width: 90%;
   z-index: 10;
   pointer-events: none;
 }
 
+.node-text-01 {
+  left: 29.17%;
+  top: 43.5%;
+}
+
+.node-text-02 {
+  left: 70.83%;
+  top: 43.5%;
+}
+
+.node-text-04 {
+  left: 29.17%;
+  top: 84.8%;
+}
+
+.node-text-03 {
+  left: 70.83%;
+  top: 84.8%;
+}
+
 .node-title {
-  font-size: 22px;
-  font-weight: 500;
+  font-family: 'Josefin Sans', 'Outfit', sans-serif;
+  font-size: 26px;
+  font-weight: 400;
   color: #F5F0EA;
-  margin: 0 0 8px 0;
+  margin: 0 0 10px 0;
+  letter-spacing: 0.02em;
 }
 
 .node-description {
-  font-size: 14px;
-  color: #F5F0EA;
-  opacity: 0.8;
-  line-height: 1.4;
-  margin: 0;
+  font-family: 'Josefin Sans', 'Plus Jakarta Sans', sans-serif;
+  font-size: 15px;
   font-weight: 300;
+  color: #F5F0EA;
+  opacity: 0.85;
+  line-height: 1.5;
+  margin: 0 auto;
 }
 
 /* Responsive Scaling */
 @media (max-width: 1200px) {
   .offers-header {
     padding-left: 40px;
+  }
+}
+
+/* Desktop Only - Hidden on Mobile */
+.offers-mobile-layout {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .offers-section {
+    padding: 0;
+  }
+
+  .offers-header {
+    display: none;
+  }
+
+  .offers-desktop-wrapper {
+    display: none;
+  }
+
+  .offers-mobile-layout {
+    display: block;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 375 / 1103;
+    overflow: hidden;
+  }
+
+  .offers-mobile-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  .offers-mobile-main-header {
+    position: absolute;
+    top: 6.5%;
+    left: 0;
+    width: 100%;
     text-align: center;
+    padding: 0 20px;
+    z-index: 10;
+    box-sizing: border-box;
+  }
+
+  .offers-mobile-title {
+    font-size: clamp(36px, 10vw, 44px);
+    font-weight: 300;
+    color: #F5F0EA;
+    margin: 0 0 16px 0;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+    font-family: 'Josefin Sans', 'Plus Jakarta Sans', sans-serif;
+  }
+
+  .offers-mobile-subtitle {
+    font-size: clamp(20px, 5.5vw, 24px);
+    color: #F5F0EA;
+    margin: 0;
+    font-weight: 300;
+    letter-spacing: 0.01em;
+    font-family: 'Josefin Sans', 'Plus Jakarta Sans', sans-serif;
+  }
+
+  .offers-mobile-node-group {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 10;
+  }
+
+  .offers-mobile-node-num {
+    width: 28px;
+    height: 28px;
+    background-color: #F5F0EA;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+    color: #031633;
+    font-size: 13px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  }
+
+  .offers-mobile-node-text {
+    width: 100%;
+    text-align: center;
+  }
+
+  .mobile-node-title {
+    font-size: clamp(20px, 5.5vw, 24px);
+    font-weight: 400;
+    color: #F5F0EA;
+    margin: 0 0 6px 0;
+    font-family: 'Josefin Sans', 'Outfit', sans-serif;
+    letter-spacing: 0.02em;
+  }
+
+  .mobile-node-desc {
+    font-size: clamp(14px, 3.8vw, 15px);
+    color: #F5F0EA;
+    opacity: 0.85;
+    line-height: 1.45;
+    margin: 0 auto;
+    font-weight: 300;
+    font-family: 'Josefin Sans', 'Plus Jakarta Sans', sans-serif;
   }
 }

@@ -33,12 +33,16 @@ const ServicesProcess = () => {
   return (
     <section className={`services-process-section ${isVisible ? 'is-visible' : ''}`} ref={sectionRef}>
       <div className="services-process-container">
-        <img
-          src={services_process_visual_svgAsset}
-          alt="What Akashvani Offers"
-          className="services-process-svg process-svg"
-          loading="lazy"
-        />
+        {/* Desktop View */}
+        <div className="services-process-desktop">
+          <img
+            src={services_process_visual_svgAsset}
+            alt="What Akashvani Offers Desktop"
+            className="services-process-svg process-svg"
+            loading="lazy"
+          />
+        </div>
+        {/* Mobile View will be handled by OffersSection component instead */}
       </div>
     </section>
   );

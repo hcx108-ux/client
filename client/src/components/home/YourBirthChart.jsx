@@ -22,7 +22,7 @@ export default function YourBirthChart() {
   const handleGenerate = (e) => {
     e.preventDefault();
     setChartState('generating');
-    
+
     // Simulate Vedic sidereal calculation
     setTimeout(() => {
       setGeneratedChart({
@@ -45,14 +45,14 @@ export default function YourBirthChart() {
   return (
     <section className="your-birth-chart-section" id="your-personal-chart">
       <div className="your-birth-chart-container">
-        
+
         {/* Left Column: Phone Mockup & Cosmos Visual */}
         <div className="birth-chart-visual-col">
-          <img 
-            src={birthChartPhoneImg} 
-            alt="Your Birth Chart Map" 
-            className="birth-chart-phone-svg" 
-            loading="lazy" 
+          <img
+            src={birthChartPhoneImg}
+            alt="Your Birth Chart Map"
+            className="birth-chart-phone-svg"
+            loading="lazy"
           />
         </div>
 
@@ -60,7 +60,7 @@ export default function YourBirthChart() {
         <div className="birth-chart-content-col">
           <div className="birth-chart-content-inner">
             <span className="birth-chart-subhead">YOUR PERSONAL CHART</span>
-            
+
             <h2 className="birth-chart-heading">
               Your birth chart is a map.<br />
               <span className="birth-chart-serif-highlight">Your life gives it meaning.</span>
@@ -70,8 +70,8 @@ export default function YourBirthChart() {
               Your birth details can offer a deeper perspective on your patterns, tendencies, energies and ways of moving through life.
             </p>
 
-            <button 
-              type="button" 
+            <button
+              type="button"
               className="birth-chart-cta-btn"
               onClick={() => setShowChartModal(true)}
               aria-label="Make My Chart"
@@ -87,9 +87,9 @@ export default function YourBirthChart() {
       {showChartModal && (
         <div className="birth-chart-modal-backdrop" onClick={handleClose}>
           <div className="birth-chart-modal-card" onClick={(e) => e.stopPropagation()}>
-            <button 
-              type="button" 
-              className="birth-chart-modal-close" 
+            <button
+              type="button"
+              className="birth-chart-modal-close"
               onClick={handleClose}
               aria-label="Close modal"
             >
@@ -107,13 +107,13 @@ export default function YourBirthChart() {
                 <form onSubmit={handleGenerate} className="birth-chart-form">
                   <div className="birth-chart-field-group">
                     <label className="birth-chart-label">Full Name</label>
-                    <input 
-                      type="text" 
-                      name="name" 
-                      placeholder="e.g. Maya Sharma" 
-                      value={formData.name} 
-                      onChange={handleInputChange} 
-                      required 
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="e.g. Maya Sharma"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      required
                       className="birth-chart-input"
                     />
                   </div>
@@ -121,23 +121,23 @@ export default function YourBirthChart() {
                   <div className="birth-chart-row">
                     <div className="birth-chart-field-group">
                       <label className="birth-chart-label">Date of Birth</label>
-                      <input 
-                        type="date" 
-                        name="dob" 
-                        value={formData.dob} 
-                        onChange={handleInputChange} 
-                        required 
+                      <input
+                        type="date"
+                        name="dob"
+                        value={formData.dob}
+                        onChange={handleInputChange}
+                        required
                         className="birth-chart-input"
                       />
                     </div>
                     <div className="birth-chart-field-group">
                       <label className="birth-chart-label">Time of Birth</label>
-                      <input 
-                        type="time" 
-                        name="time" 
-                        value={formData.time} 
-                        onChange={handleInputChange} 
-                        required 
+                      <input
+                        type="time"
+                        name="time"
+                        value={formData.time}
+                        onChange={handleInputChange}
+                        required
                         className="birth-chart-input"
                       />
                     </div>
@@ -146,22 +146,22 @@ export default function YourBirthChart() {
                   <div className="birth-chart-row">
                     <div className="birth-chart-field-group">
                       <label className="birth-chart-label">Place of Birth (City, Country)</label>
-                      <input 
-                        type="text" 
-                        name="city" 
-                        placeholder="e.g. Mumbai, India" 
-                        value={formData.city} 
-                        onChange={handleInputChange} 
-                        required 
+                      <input
+                        type="text"
+                        name="city"
+                        placeholder="e.g. Mumbai, India"
+                        value={formData.city}
+                        onChange={handleInputChange}
+                        required
                         className="birth-chart-input"
                       />
                     </div>
                     <div className="birth-chart-field-group">
                       <label className="birth-chart-label">Primary Exploration Focus</label>
-                      <select 
-                        name="focusArea" 
-                        value={formData.focusArea} 
-                        onChange={handleInputChange} 
+                      <select
+                        name="focusArea"
+                        value={formData.focusArea}
+                        onChange={handleInputChange}
                         className="birth-chart-select"
                       >
                         <option value="General Life Path">General Life Path</option>
@@ -224,8 +224,8 @@ export default function YourBirthChart() {
                 </div>
 
                 <div className="birth-chart-modal-footer">
-                  <button 
-                    type="button" 
+                  <button
+                    type="button"
                     className="birth-chart-consult-cta"
                     onClick={() => {
                       handleClose();
@@ -235,8 +235,8 @@ export default function YourBirthChart() {
                   >
                     Consult With a Vedic Practitioner ➔
                   </button>
-                  <button 
-                    type="button" 
+                  <button
+                    type="button"
                     className="birth-chart-reset-btn"
                     onClick={() => setChartState('form')}
                   >

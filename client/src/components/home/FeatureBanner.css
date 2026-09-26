@@ -1,8 +1,8 @@
 .feature-banner-section {
   width: 100%;
-  background-color: #FAF7F2;
   padding: 40px 0;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow: hidden;
@@ -18,14 +18,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .feature-banner-svg {
   width: 100%;
   height: auto;
-  max-height: 247px;
+  max-width: 1440px;
   display: block;
-  transition: transform 0.3s ease;
 }
 
 /* Subtle interactive hover effect for the feature items if desired */
@@ -37,6 +37,11 @@
   filter: brightness(1.05);
 }
 
+picture.feature-banner-picture {
+  width: 100%;
+  display: block;
+}
+
 @media (max-width: 768px) {
   .feature-banner-section {
     padding: 24px 0;
@@ -44,11 +49,12 @@
   
   .feature-banner-container {
     padding: 0 16px;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    /* Removed overflow-x to prevent scrolling, as we now have a proper mobile SVG */
   }
   
   .feature-banner-svg {
-    min-width: 900px; /* Enable horizontal scrolling on mobile to keep exact vector clarity */
+    width: 100%;
+    min-width: auto;
+    max-width: 100%;
   }
 }

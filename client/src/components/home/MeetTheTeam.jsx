@@ -9,8 +9,8 @@ const guidanceCategories = [
   {
     id: 1,
     categoryTitle: 'Vedic & Astrological Guidance',
-    categorySubtitleLine1: 'For Exploring Charts, Patterns, Compatibility, Tendencies',
-    categorySubtitleLine2: 'And Timing.',
+    categorySubtitleLine1: 'For exploring charts, patterns,',
+    categorySubtitleLine2: 'compatibility, tendencies and timing.',
     practitioner: {
       name: 'Ananya Rao',
       experienceYears: '12 Yrs',
@@ -25,8 +25,8 @@ const guidanceCategories = [
   {
     id: 2,
     categoryTitle: 'Relationship Guidance',
-    categorySubtitleLine1: 'For Understanding Communication, Dynamics,',
-    categorySubtitleLine2: 'Boundaries, Conflict And Connection.',
+    categorySubtitleLine1: 'For understanding communication,',
+    categorySubtitleLine2: 'dynamics, boundaries, conflict and connectio',
     practitioner: {
       name: 'Dr. Devrat Joshi',
       experienceYears: '16 Yrs',
@@ -41,8 +41,8 @@ const guidanceCategories = [
   {
     id: 3,
     categoryTitle: 'Spiritual Guidance',
-    categorySubtitleLine1: 'For Inner Reflection, Meaning, Purpose And Deeper',
-    categorySubtitleLine2: 'Personal Questions.',
+    categorySubtitleLine1: 'For inner reflection, meaning, purpose',
+    categorySubtitleLine2: 'and deeper personal questions.',
     practitioner: {
       name: 'Pt. Someshwar Shastri',
       experienceYears: '20 Yrs',
@@ -57,8 +57,8 @@ const guidanceCategories = [
   {
     id: 4,
     categoryTitle: 'Holistic Practices',
-    categorySubtitleLine1: 'For Exploring The Relationship Between Mind, Body And',
-    categorySubtitleLine2: 'Inner Wellbeing.',
+    categorySubtitleLine1: 'For exploring the relationship between',
+    categorySubtitleLine2: 'mind, body and inner wellbeing.',
     practitioner: {
       name: 'Meera Devi',
       experienceYears: '14 Yrs',
@@ -97,12 +97,12 @@ export default function MeetTheTeam() {
       {/* Background Decorative Wavy Lines */}
       <div className="meet-people-bg-waves" aria-hidden="true">
         <svg viewBox="0 0 1440 952" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M-35 150 C300 130, 600 180, 1000 120 C1200 80, 1400 110, 1475 90" stroke="rgba(255,255,255,0.035)" strokeWidth="1.5" fill="none"/>
-          <path d="M-35 250 C350 220, 700 280, 1050 200 C1250 160, 1400 200, 1475 180" stroke="rgba(255,255,255,0.035)" strokeWidth="1.5" fill="none"/>
-          <path d="M-35 380 C300 350, 650 420, 1020 340 C1220 300, 1380 340, 1475 320" stroke="rgba(255,255,255,0.035)" strokeWidth="1.5" fill="none"/>
-          <path d="M-35 520 C320 490, 680 560, 1050 470 C1260 420, 1410 470, 1475 440" stroke="rgba(255,255,255,0.035)" strokeWidth="1.5" fill="none"/>
-          <path d="M-35 680 C310 640, 660 710, 1030 620 C1240 570, 1390 620, 1475 590" stroke="rgba(255,255,255,0.035)" strokeWidth="1.5" fill="none"/>
-          <path d="M-35 840 C330 800, 690 870, 1060 780 C1270 730, 1420 780, 1475 750" stroke="rgba(255,255,255,0.035)" strokeWidth="1.5" fill="none"/>
+          <path d="M-35 150 C300 130, 600 180, 1000 120 C1200 80, 1400 110, 1475 90" stroke="rgba(255,255,255,0.035)" strokeWidth="1.5" fill="none" />
+          <path d="M-35 250 C350 220, 700 280, 1050 200 C1250 160, 1400 200, 1475 180" stroke="rgba(255,255,255,0.035)" strokeWidth="1.5" fill="none" />
+          <path d="M-35 380 C300 350, 650 420, 1020 340 C1220 300, 1380 340, 1475 320" stroke="rgba(255,255,255,0.035)" strokeWidth="1.5" fill="none" />
+          <path d="M-35 520 C320 490, 680 560, 1050 470 C1260 420, 1410 470, 1475 440" stroke="rgba(255,255,255,0.035)" strokeWidth="1.5" fill="none" />
+          <path d="M-35 680 C310 640, 660 710, 1030 620 C1240 570, 1390 620, 1475 590" stroke="rgba(255,255,255,0.035)" strokeWidth="1.5" fill="none" />
+          <path d="M-35 840 C330 800, 690 870, 1060 780 C1270 730, 1420 780, 1475 750" stroke="rgba(255,255,255,0.035)" strokeWidth="1.5" fill="none" />
         </svg>
       </div>
 
@@ -110,12 +110,28 @@ export default function MeetTheTeam() {
         {/* Left Column: Heading + 4 Guidance Category Cards */}
         <div className="meet-people-left">
           <div className="meet-people-header">
-            <h2 className="meet-people-main-title">Meet The People Behind</h2>
-            <span className="meet-people-serif-title">The Perspectives.</span>
-            <p className="meet-people-description">
-              Akashvani Brings Together Practitioners Who Bring<br />
-              Different Forms Of Knowledge, Experience And Practice.
-            </p>
+            {/* Desktop Heading */}
+            <div className="desktop-header-content">
+              <h2 className="meet-people-main-title">Meet The People Behind</h2>
+              <span className="meet-people-serif-title">the perspectives.</span>
+              <p className="meet-people-description">
+                Akashvani Brings Together Practitioners Who Bring<br />
+                Different Forms Of Knowledge, Experience And Practice.
+              </p>
+            </div>
+            
+            {/* Mobile Heading */}
+            <div className="mobile-header-content">
+              <h2 className="meet-people-main-title">
+                Meet The People<br />
+                Behind <span className="meet-people-serif-title inline">the perspectives.</span>
+              </h2>
+              <p className="meet-people-description">
+                Akashvani Brings Together Practitioners<br />
+                Who Bring Different Forms Of Knowledge,<br />
+                Experience And Practice.
+              </p>
+            </div>
           </div>
 
           <div className="guidance-cards-list" role="tablist" aria-label="Guidance Categories">
@@ -173,7 +189,9 @@ export default function MeetTheTeam() {
               onClick={handlePrev}
               aria-label="Previous practitioner"
             >
-              ←
+              <svg width="100%" height="100%" viewBox="0 150.863 48 43.2734" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.8047 168.309H19.5469C19.0195 169.415 18.3848 170.421 17.6426 171.326H33.2188V172.312H17.6426C18.3066 172.977 18.9512 173.982 19.5762 175.33H18.8145C17.3626 173.683 16.015 172.573 14.7715 172V171.561C15.9238 171.098 17.2682 170.014 18.8047 168.309Z" fill="currentColor"/>
+              </svg>
             </button>
 
             {/* Iconic Oval / Pill Portrait Frame */}
@@ -198,7 +216,9 @@ export default function MeetTheTeam() {
               onClick={handleNext}
               aria-label="Next practitioner"
             >
-              →
+              <svg width="100%" height="100%" viewBox="295 150.863 48 43.2734" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M324.186 168.309C325.729 170.014 327.073 171.098 328.219 171.561V172C326.975 172.573 325.628 173.683 324.176 175.33H323.424C324.042 173.982 324.684 172.977 325.348 172.312H309.771V171.326H325.348C324.605 170.421 323.971 169.415 323.443 168.309H324.186Z" fill="currentColor"/>
+              </svg>
             </button>
           </div>
 

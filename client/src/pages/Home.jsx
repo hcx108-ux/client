@@ -13,7 +13,7 @@ import DistinctGuidance from '../components/home/DistinctGuidance';
 import ChooseTheLevel from '../components/home/ChooseTheLevel';
 import AboutAkashvani from '../components/home/AboutAkashvani';
 import TheAkashvaniJournal from '../components/home/TheAkashvaniJournal';
-import ServicesProcess from '../components/home/ServicesProcess';
+import OffersSection from '../components/home/OffersSection';
 import MindBodySoul from '../components/home/MindBodySoul';
 import Faq from '../components/home/Faq';
 import ThereIsAlways from '../components/home/ThereIsAlways';
@@ -31,25 +31,29 @@ const Home = () => {
       {/* Primary Header */}
       <Navbar />
 
-      {/* Main Hero Content */}
+      {/* Main Content Flow */}
       <main>
-        <AnimatedSection delay={0.1}><Hero /></AnimatedSection>
-        <AnimatedSection delay={0.2} fadeOnly={true}><FeatureBanner /></AnimatedSection>
-        <AnimatedSection delay={0.2}><MindBodySoul /></AnimatedSection>
-        <AnimatedSection delay={0.2}><ServicesProcess /></AnimatedSection>
-        <AnimatedSection delay={0.2}><JourneyBanner /></AnimatedSection>
-        <AnimatedSection delay={0.2}><JourneySteps /></AnimatedSection>
-        <AnimatedSection delay={0.2} fadeOnly={true}><MeetTheTeam /></AnimatedSection>
-        <AnimatedSection delay={0.2} fadeOnly={true}><LookAtYourLife /></AnimatedSection>
-        <AnimatedSection delay={0.2} fadeOnly={true}><YourBirthChart /></AnimatedSection>
-        <AnimatedSection delay={0.2} fadeOnly={true}><PersonalJourneyBeginning /></AnimatedSection>
-        <AnimatedSection delay={0.2} fadeOnly={true}><DistinctGuidance /></AnimatedSection>
-        <AnimatedSection delay={0.2} fadeOnly={true}><ChooseTheLevel /></AnimatedSection>
-        <AnimatedSection delay={0.2} fadeOnly={true}><AboutAkashvani /></AnimatedSection>
-        <AnimatedSection delay={0.2} fadeOnly={true}><TheAkashvaniJournal /></AnimatedSection>
-        <AnimatedSection delay={0.2} fadeOnly={true}><Faq /></AnimatedSection>
-        <AnimatedSection delay={0.2} fadeOnly={true}><ThereIsAlways /></AnimatedSection>
-        <AnimatedSection delay={0.2} fadeOnly={true}><StartWhere /></AnimatedSection>
+        <Hero />
+        <FeatureBanner />
+        
+        {/* Continuous Solid Dark Blue Experience */}
+        <MindBodySoul />
+        <OffersSection />
+        <JourneyBanner />
+        <JourneySteps />
+
+        {/* Subsequent Editorial Sections */}
+        <AnimatedSection delay={0.15} fadeOnly={true}><MeetTheTeam /></AnimatedSection>
+        <AnimatedSection delay={0.15} fadeOnly={true}><LookAtYourLife /></AnimatedSection>
+        <AnimatedSection delay={0.15} fadeOnly={true}><YourBirthChart /></AnimatedSection>
+        <AnimatedSection delay={0.15} fadeOnly={true}><PersonalJourneyBeginning /></AnimatedSection>
+        <AnimatedSection delay={0.15} fadeOnly={true}><DistinctGuidance /></AnimatedSection>
+        <AnimatedSection delay={0.15} fadeOnly={true}><ChooseTheLevel /></AnimatedSection>
+        <AnimatedSection delay={0.15} fadeOnly={true}><AboutAkashvani /></AnimatedSection>
+        <AnimatedSection delay={0.15} fadeOnly={true}><TheAkashvaniJournal /></AnimatedSection>
+        <AnimatedSection delay={0.15} fadeOnly={true}><Faq /></AnimatedSection>
+        <AnimatedSection delay={0.15} fadeOnly={true}><ThereIsAlways /></AnimatedSection>
+        <StartWhere />
       </main>
 
       {/* Footer Section */}

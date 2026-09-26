@@ -61,63 +61,65 @@
 /* Header Area */
 .start-where-header {
   max-width: 900px;
-  margin: 40px auto 0;
+  margin: 20px auto 0;
 }
 
 .start-where-heading {
-  font-family: 'Urbanist', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: var(--font-sans, 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif);
   font-size: 38px;
   font-weight: 400;
-  line-height: 1.35;
-  letter-spacing: -0.01em;
-  color: #F5F0EA;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  color: #FFFFFF;
   margin: 0;
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.45);
   user-select: text;
 }
 
 .start-where-italic {
-  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  font-family: 'Cormorant Garamond', var(--font-serif, Georgia, serif);
   font-style: italic;
   font-weight: 400;
-  font-size: 44px;
+  font-size: 46px;
   color: #E0C58E;
   letter-spacing: 0.01em;
-  display: inline-block;
-  margin-left: 4px;
+  display: block;
+  margin-top: 6px;
 }
 
 /* CTA Button Container */
 .start-where-cta-wrap {
-  margin: 40px 0 60px;
+  margin: 36px 0 44px;
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 /* CTA Pill Button (Terracotta / Rust) */
 .start-where-cta-btn {
-  font-family: 'Urbanist', 'Inter', sans-serif;
-  font-size: 16px;
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 15.5px;
   font-weight: 600;
-  letter-spacing: 0.02em;
-  color: #F5F0EA;
+  letter-spacing: 0.03em;
+  color: #FFFFFF;
   background-color: #BD5B3B;
   border: none;
   border-radius: 9999px;
-  padding: 18px 42px;
+  padding: 17px 42px;
   cursor: pointer;
-  box-shadow: 0 14px 34px rgba(189, 91, 59, 0.38), 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 28px rgba(189, 91, 59, 0.42), 0 4px 12px rgba(0, 0, 0, 0.25);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   outline: none;
+  text-align: center;
 }
 
 .start-where-cta-btn:hover {
   background-color: #C86444;
   transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 18px 42px rgba(189, 91, 59, 0.5), 0 6px 16px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 16px 36px rgba(189, 91, 59, 0.5), 0 6px 16px rgba(0, 0, 0, 0.25);
   color: #FFFFFF;
 }
 
@@ -142,7 +144,7 @@
 }
 
 .start-where-logo-svg {
-  width: 174px;
+  width: 164px;
   height: auto;
   max-height: 48px;
   display: block;
@@ -531,7 +533,7 @@
   }
 
   .start-where-italic {
-    font-size: 34px;
+    font-size: 36px;
   }
 
   .start-where-cta-btn {
@@ -540,33 +542,45 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .start-where-section {
-    min-height: 500px;
+    min-height: 520px;
   }
 
   .start-where-container {
-    min-height: 500px;
-    padding: 60px 16px 40px;
+    min-height: 520px;
+    padding: 60px 20px 44px;
+  }
+
+  .start-where-header {
+    margin: 10px auto 0;
   }
 
   .start-where-heading {
-    font-size: 24px;
-    line-height: 1.4;
+    font-size: 26px;
+    line-height: 1.3;
   }
 
   .start-where-italic {
-    font-size: 28px;
+    font-size: 32px;
     display: block;
-    margin-left: 0;
     margin-top: 4px;
+    color: #E0C58E;
+  }
+
+  .start-where-cta-wrap {
+    margin: 28px 0 34px;
   }
 
   .start-where-cta-btn {
-    font-size: 14px;
-    padding: 14px 28px;
+    font-size: 14.5px;
+    padding: 15px 32px;
     width: 100%;
     max-width: 320px;
+  }
+
+  .start-where-logo-svg {
+    width: 145px;
   }
 
   .start-where-modal {
@@ -576,9 +590,5 @@
   .start-where-form-row {
     grid-template-columns: 1fr;
     gap: 12px;
-  }
-
-  .start-where-logo-svg {
-    width: 140px;
   }
 }

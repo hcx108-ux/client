@@ -10,6 +10,17 @@
   font-family: var(--font-sans);
   overflow: hidden;
 }
+@media (max-width: 768px) {
+  .your-birth-chart-section {
+    width: 100%;
+    position: static;
+    left: auto;
+    right: auto;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
 
 .your-birth-chart-container {
   width: 100%;
@@ -29,7 +40,7 @@
   }
 }
 
-/* Left Column: Phone Mockup Visual starting from the top exactly like screenshot */
+/* Left Column: Phone Mockup Visual */
 .birth-chart-visual-col {
   background-color: #E0C58E;
   display: flex;
@@ -58,6 +69,8 @@
   display: block;
   object-fit: cover;
   object-position: top center;
+  position: relative;
+  z-index: 2;
   pointer-events: none;
   user-select: none;
 }
@@ -217,8 +230,13 @@
 }
 
 @keyframes chartModalFade {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 /* Modal Card */
@@ -243,6 +261,7 @@
     opacity: 0;
     transform: translateY(20px) scale(0.96);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -400,7 +419,9 @@
 }
 
 @keyframes chartSpin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .birth-chart-loading-title {
