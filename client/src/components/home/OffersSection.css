@@ -129,15 +129,15 @@
   }
 
   .offers-header {
-    display: none;
+    display: none !important;
   }
 
   .offers-desktop-wrapper {
-    display: none;
+    display: none !important;
   }
 
   .offers-mobile-layout {
-    display: block;
+    display: block !important;
     position: relative;
     width: 100%;
     aspect-ratio: 375 / 1103;

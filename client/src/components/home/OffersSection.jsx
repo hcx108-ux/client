@@ -9,13 +9,13 @@ const OffersSection = () => {
     <section className="offers-section">
       <div className="offers-container">
         {/* Desktop Wavy Line & Nodes (Complete Figma Asset) */}
-        <AnimatedSection className="offers-desktop-wrapper">
+        <div className="offers-desktop-wrapper">
           <img
             src={servicesProcessVisual}
             alt="What Akashvani Offers - Journey Steps"
             className="offers-desktop-img"
           />
-        </AnimatedSection>
+        </div>
 
         {/* Mobile HTML Layout (Responsive) */}
         <div className="offers-mobile-layout">
