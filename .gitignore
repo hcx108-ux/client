@@ -27,3 +27,10 @@ Thumbs.db
 
 # archives & large zip files
 *.zip
+
+# scratch and temp extraction files
+scratch/
+extract*.js
+extract*.ps1
+find_images_team.ps1
+inspect_team.ps1
